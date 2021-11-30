@@ -19,6 +19,7 @@ label.logo{
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;
+    margin-right: 100px;
 }
 nav ul{
     float: right;
@@ -90,4 +91,10 @@ a.active,a:hover{
     #check:checked ~ ul{
         left: 0;
     }
+}
+
+#imglogo{
+    width: 7em;
+    height: 5em;
+    margin-left: 8px;
 }
