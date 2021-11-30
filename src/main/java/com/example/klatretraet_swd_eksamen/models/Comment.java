@@ -6,21 +6,16 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Data
+@Table(name = "comments")
 @Entity
-@Table(name = "employees")
-public class Employee {
+public class Comment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String name;
-
-    @Column
-    private String image;
-
-    @Column
-    private double calculatedVacation;
+    private String comment;
 
     @ManyToOne
     @JoinColumn(name = "area_id")

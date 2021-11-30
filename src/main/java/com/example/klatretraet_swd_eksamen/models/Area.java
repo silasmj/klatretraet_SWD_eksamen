@@ -17,8 +17,9 @@ public class Area {
     @Column
     private String name;
 
-    @Column
-    private String comments;
+    @JsonIgnore
+    @OneToMany(mappedBy = "area", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Comment> comments;
 
     @JsonIgnore
     @OneToMany(mappedBy = "area", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
