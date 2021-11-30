@@ -1,5 +1,6 @@
 package com.example.klatretraet_swd_eksamen.models;
 
+import com.sun.istack.Nullable;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -23,4 +24,9 @@ public class Employee {
 
     @Column
     private double calculatedVacation;
+
+    @ManyToOne
+    @JoinColumn(name = "area_id")
+    @Nullable
+    private Area areas;
 }
