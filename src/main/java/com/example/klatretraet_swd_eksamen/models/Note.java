@@ -4,18 +4,25 @@ import com.sun.istack.Nullable;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
-@Table(name = "comments")
+@Table(name = "notes")
 @Entity
-public class Comment {
+public class Note {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String comment;
+    private String body;
+
+    @Column
+    private String title;
+
+    @Column
+    private Date updated;
 
     @ManyToOne
     @JoinColumn(name = "area_id")
