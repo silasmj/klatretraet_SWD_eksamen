@@ -47,7 +47,7 @@ export default class NotesView {
                     ${body.length > MAX_BODY_LENGTH ? "..." : ""}
                 </div>
                 <div class="notes__small-updated">
-                    ${updated.toLocaleDateString("Hello")(undefined, { dateStyle: "full", timeStyle: "short" })}
+                    ${updated.toLocaleDateString()(undefined, { dateStyle: "full", timeStyle: "short" })}
                 </div>
             </div>
         `;
