@@ -3,10 +3,10 @@ const employeeTableBody = document.getElementById("employees-tbody");
 fetch(baseURL + "/employees")
     .then(response => response.json())
     .then(employees => {
-        employees.map(createEmployee);
+        employees.map(createEmployeeTableRow);
     });
 
-function createEmployee(employee){
+function createEmployeeTableRow(employee){
     const employeeTableRow = document.createElement("tr");
     employeeTableRow.id = employee.id
 
