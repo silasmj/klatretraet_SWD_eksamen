@@ -35,6 +35,8 @@ function constructEmployeeTableRow(employeeTableRow, employee){
             </td>    
         `;
 
+    document.getElementById(`update-button-${employee.id}`)
+        .addEventListener("click", () => updateEmployee(employee));
 }
 function deleteEmployee(employeeId) {
     fetch(baseURL + "/employees/" + employeeId, {

@@ -33,10 +33,10 @@ public class EmployeeController {
     @PatchMapping("/employees/{id}")
     public String patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
         return employee.findById(id).map(foundEmployee -> {
-            if (employeeToUpdate.getName() != null) foundEmployee.setName(employeeToUpdate.getName());
-            if (employeeToUpdate.getImage() != null) foundEmployee.setImage(employeeToUpdate.getImage());
-            if (employeeToUpdate.getCalculatedVacation() != 0) foundEmployee.setCalculatedVacation(employeeToUpdate.getCalculatedVacation());
             if (employeeToUpdate.getArea() != null) foundEmployee.setArea(employeeToUpdate.getArea());
+            if (employeeToUpdate.getCalculatedVacation() != 0) foundEmployee.setCalculatedVacation(employeeToUpdate.getCalculatedVacation());
+            if (employeeToUpdate.getImage() != null) foundEmployee.setImage(employeeToUpdate.getImage());
+            if (employeeToUpdate.getName() != null) foundEmployee.setName(employeeToUpdate.getName());
             employee.save(foundEmployee);
             return "Medarbejder opdateret";
         }).orElse("Medarbejder ikke fundet");
