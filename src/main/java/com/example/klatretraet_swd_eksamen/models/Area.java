@@ -19,7 +19,7 @@ public class Area {
 
     @JsonIgnore
     @OneToMany(mappedBy = "area", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Comment> comments;
+    private List<Note> notes;
 
     @JsonIgnore
     @OneToMany(mappedBy = "area", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
