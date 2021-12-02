@@ -1,5 +1,6 @@
 package com.example.klatretraet_swd_eksamen.controllers;
 
+import com.example.klatretraet_swd_eksamen.DTO.EmployeeEditDTO;
 import com.example.klatretraet_swd_eksamen.models.Employee;
 import com.example.klatretraet_swd_eksamen.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,17 @@ public class EmployeeController {
     public Employee addEmployee(@RequestBody Employee newEmployee){
         return employee.save(newEmployee);
     }
+
+    /*@PatchMapping("/employees/{id}")
+    public EmployeeEditDTO patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
+        return employee.findById(id).map(foundEmployee -> {
+            if (employeeToUpdate.getName() != null) foundEmployee.setName(employeeToUpdate.getName());
+            if (employeeToUpdate.getCalculatedVacation() != 0) foundEmployee.setCalculatedVacation(employeeToUpdate.getCalculatedVacation());
+            if (employeeToUpdate.getArea() != null) foundEmployee.setArea(employeeToUpdate.getArea());
+            Employee createdEmployee = employee.save(foundEmployee);
+            return new EmployeeEditDTO(createdEmployee, employeeToUpdate.getName(), employeeToUpdate.getImage(), employeeToUpdate.getCalculatedVacation(), employeeToUpdate.getArea());
+        }).orElse(new EmployeeEditDTO("Cant save data"));
+    }*/
 
     @DeleteMapping("/employees/{id}")
     public void deleteEmployeeById(@PathVariable Long id){
