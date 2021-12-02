@@ -30,16 +30,17 @@ public class EmployeeController {
         return employee.save(newEmployee);
     }
 
-    /*@PatchMapping("/employees/{id}")
-    public EmployeeEditDTO patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
+    @PatchMapping("/employees/{id}")
+    public String patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
         return employee.findById(id).map(foundEmployee -> {
             if (employeeToUpdate.getName() != null) foundEmployee.setName(employeeToUpdate.getName());
+            if (employeeToUpdate.getImage() != null) foundEmployee.setImage(employeeToUpdate.getImage());
             if (employeeToUpdate.getCalculatedVacation() != 0) foundEmployee.setCalculatedVacation(employeeToUpdate.getCalculatedVacation());
             if (employeeToUpdate.getArea() != null) foundEmployee.setArea(employeeToUpdate.getArea());
-            Employee createdEmployee = employee.save(foundEmployee);
-            return new EmployeeEditDTO(createdEmployee, employeeToUpdate.getName(), employeeToUpdate.getImage(), employeeToUpdate.getCalculatedVacation(), employeeToUpdate.getArea());
-        }).orElse(new EmployeeEditDTO("Cant save data"));
-    }*/
+            employee.save(foundEmployee);
+            return "Medarbejder opdateret";
+        }).orElse("Medarbejder ikke fundet");
+    }
 
     @DeleteMapping("/employees/{id}")
     public void deleteEmployeeById(@PathVariable Long id){
