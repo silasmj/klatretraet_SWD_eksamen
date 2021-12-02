@@ -1,7 +1,7 @@
-import NotesView from "./NotesView.js";
-import NotesAPI from "./NotesAPI.js";
+import NotesView from "../NotesView.js";
+import AndestuenNotesAPI from "./AndestuenNotesAPI.js";
 
-export default class App {
+export default class AndestuenApp {
     constructor(root) {
         this.notes = [];
         this.activeNote = null;
@@ -11,7 +11,7 @@ export default class App {
     }
 
     _refreshNotes() {
-        const notes = NotesAPI.getAllNotes();
+        const notes = AndestuenNotesAPI.getAllNotes();
 
         this._setNotes(notes);
 
@@ -43,11 +43,11 @@ export default class App {
                     body: "(Beskrivelse)"
                 };
 
-                NotesAPI.saveNote(newNote);
+                AndestuenNotesAPI.saveNote(newNote);
                 this._refreshNotes();
             },
             onNoteEdit: (title, body) => {
-                NotesAPI.saveNote({
+                AndestuenNotesAPI.saveNote({
                     id: this.activeNote.id,
                     title,
                     body
@@ -56,7 +56,7 @@ export default class App {
                 this._refreshNotes();
             },
             onNoteDelete: noteId => {
-                NotesAPI.deleteNote(noteId);
+                AndestuenNotesAPI.deleteNote(noteId);
                 this._refreshNotes();
             },
         };
