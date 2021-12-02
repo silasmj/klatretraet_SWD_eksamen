@@ -29,7 +29,21 @@ function constructEmployeeTableRow(employeeTableRow, employee){
             <td>
                 <p class="row-employee-calculatedVacation">${(employee.calculatedVacation.toString())}</p>
             </td>
-       
+            <td>
+                <button id="update-button-${employee.id}">📝</button>            
+                <button onclick="deleteEmployee(${employee.id})">❌</button>            
+            </td>    
         `;
 
+}
+function deleteEmployee(employeeId) {
+    fetch(baseURL + "/employees/" + employeeId, {
+        method: "DELETE"
+    }).then(response => {
+        if (response.status === 200) {
+            document.getElementById(employeeId).remove();
+        } else {
+            console.log(response.status);
+        }
+    });
 }

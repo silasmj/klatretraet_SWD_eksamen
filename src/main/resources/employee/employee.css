@@ -20,6 +20,6 @@ table, th, td{
 .employee-body td {
     padding: 12px 15px;
 }
-
-
-
+.update-button{
+   width: 200px;
+}
