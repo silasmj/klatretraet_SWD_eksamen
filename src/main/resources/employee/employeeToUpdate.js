@@ -38,6 +38,7 @@ function updateEmployeeBackEnd(employeeId){
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify(employeeToUpdate)
     }).then(response => {
+        console.log(employeeToUpdate)
         if(response.status === 200){
             constructEmployeeTableRow(tableRowToUpdate, employeeToUpdate);
         }
