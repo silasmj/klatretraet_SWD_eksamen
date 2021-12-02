@@ -7,7 +7,7 @@ export default class NotesView {
         this.onNoteDelete = onNoteDelete;
         this.root.innerHTML = `
             <div class="notes__sidebar">
-                <button class="notes__add" type="button">Tilføj note</button>
+                <button class="notes__add" type="button">Tilføj Note</button>
                 <div class="notes__list"></div>
             </div>
             <div class="notes__preview">
@@ -47,7 +47,7 @@ export default class NotesView {
                     ${body.length > MAX_BODY_LENGTH ? "..." : ""}
                 </div>
                 <div class="notes__small-updated">
-                    ${updated.toLocaleDateString("Hello")(undefined, { dateStyle: "full", timeStyle: "short" })}
+                    ${updated.toLocaleString(undefined, { dateStyle: "full", timeStyle: "short" })}
                 </div>
             </div>
         `;
@@ -72,7 +72,7 @@ export default class NotesView {
             });
 
             noteListItem.addEventListener("dblclick", () => {
-                const doDelete = confirm("Er du sikker på du vil fjerne noten?");
+                const doDelete = confirm("Are you sure you want to delete this note?");
 
                 if (doDelete) {
                     this.onNoteDelete(noteListItem.dataset.noteId);
