@@ -1,69 +1,94 @@
 #ande-btn {
-    box-shadow: 5px 11px 6px 0px #3dc21b;
-    background: #44c767 linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
-    border-radius: 5px;
-    border: 1px solid #18ab29;
+    box-shadow: 0px 0px 0px 19px #9fb4f2;
+    background: #7892c2 linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    border-radius: 10px;
+    border: 1px solid #4e6096;
     display: inline-block;
     cursor: pointer;
-    color: black;
+    color: #ffffff;
     font-family: Arial;
-    font-size: 17px;
-    padding: 20px 53px;
+    font-size: 19px;
+    padding: 25px 60px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #2f6627;
+    text-shadow: 0px 1px 0px #283966;
 }
 #ande-btn:hover {
-    background: #5cbf2a linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+    background: #476e9e linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 }
-
 #måge-btn {
-    box-shadow: 5px 11px 6px 0px #3dc21b;
-    background: #44c767 linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
-    border-radius: 5px;
-    border: 1px solid #18ab29;
+    box-shadow: 0px 0px 0px 19px #9fb4f2;
+    background: #7892c2 linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    border-radius: 10px;
+    border: 1px solid #4e6096;
     display: inline-block;
     cursor: pointer;
-    color: black;
+    color: #ffffff;
     font-family: Arial;
-    font-size: 17px;
-    padding: 20px 53px;
+    font-size: 19px;
+    padding: 25px 60px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #2f6627;
+    text-shadow: 0px 1px 0px #283966;
 }
 #måge-btn:hover {
-    background: #5cbf2a linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+    background: #476e9e linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 }
+
 #terne-btn {
-    box-shadow: 5px 11px 6px 0px #3dc21b;
-    background: #44c767 linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
-    border-radius: 5px;
-    border: 1px solid #18ab29;
+    box-shadow: 0px 0px 0px 19px #9fb4f2;
+    background: #7892c2 linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    border-radius: 10px;
+    border: 1px solid #4e6096;
     display: inline-block;
     cursor: pointer;
-    color: black;
+    color: #ffffff;
     font-family: Arial;
-    font-size: 17px;
-    padding: 20px 53px;
+    font-size: 19px;
+    padding: 25px 60px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #2f6627;
+    text-shadow: 0px 1px 0px #283966;
 }
 #terne-btn:hover {
-    background: #5cbf2a linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+    background: #476e9e linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 }
+
 #vibe-btn {
-    box-shadow: 5px 11px 6px 0px #3dc21b;
-    background: #44c767 linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
-    border-radius: 5px;
-    border: 1px solid #18ab29;
+    box-shadow: 0px 0px 0px 19px #9fb4f2;
+    background: #7892c2 linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    border-radius: 10px;
+    border: 1px solid #4e6096;
     display: inline-block;
     cursor: pointer;
-    color: black;
+    color: #ffffff;
     font-family: Arial;
-    font-size: 17px;
-    padding: 20px 53px;
+    font-size: 19px;
+    padding: 25px 60px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #2f6627;
+    text-shadow: 0px 1px 0px #283966;
 }
 #vibe-btn:hover {
-    background: #5cbf2a linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+    background: #476e9e linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+}
+#måge-div{
+    margin: auto;
+    position: absolute;
+    top: 84%;
+    left: 40%;
+}
+#terne-div {
+    margin: auto;
+    position: absolute;
+    top: 62%;
+    left: 40%;
+}
+#vibe-div{
+    margin: auto;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+#ande-div{
+    margin: auto;
+    position: absolute;
+    top: 18%;
+    left: 40%;
 }
