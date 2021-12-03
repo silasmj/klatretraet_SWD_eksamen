@@ -10,8 +10,10 @@ fetch(baseURL + "/employees")
         console.log(filteredEmployees)
     })
 
-function createEmployeeCard() {
-
+function createEmployeeCard(employee) {
+    const employeeElement = document.getElementById("div")
+    employeeElement.innerText = employee.name;
+    employeeElement.innerText = employee.image;
 }
 
 
