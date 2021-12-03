@@ -22,8 +22,8 @@ public class Employee {
     @Column
     private double calculatedVacation;
 
-    @ManyToOne
-    @JoinColumn(name = "area_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "area_name")
     @Nullable
     private Area area;
 }

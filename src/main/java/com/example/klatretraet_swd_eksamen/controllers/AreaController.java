@@ -21,7 +21,7 @@ public class AreaController {
 
     @PostMapping("/areas")
     public Area addArea(@RequestBody Area newArea) {
-    newArea.setId(null);
+    newArea.setName(null);
     return areas.save(newArea);
     }
 

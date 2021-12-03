@@ -3,6 +3,7 @@ const employeeTableBody = document.getElementById("employees-tbody");
 fetch(baseURL + "/employees")
     .then(response => response.json())
     .then(employees => {
+        console.log(employees)
         employees.map(createEmployee);
     });
 
@@ -24,17 +25,19 @@ function constructEmployeeTableRow(employeeTableRow, employee){
                 <p class="row-employee-name">${(employee.name)}</p>
             </td>
             <td>
-                <p class="row-employee-image">${(employee.image)}</p>
+                <img src="Logo.jpg" class="row-employee-image">${(employee.image)}</img>
             </td>
             <td>
-                <p class="row-employee-calculatedVacation">${(employee.calculatedVacation.toString())}</p>
+                <p class="row-employee-calculatedVacation">${(employee.calculatedVacation)}</p>
             </td>
             <td>
-                <button id="update-button-${employee.id}">📝</button>            
+                <p class="row-employee-area">${(employee.area.name)}</p>
+            </td>
+            <td>
+                <button id="update-button-${employee.id}">📝</button>                       
                 <button onclick="deleteEmployee(${employee.id})">❌</button>            
             </td>    
         `;
-
     document.getElementById(`update-button-${employee.id}`)
         .addEventListener("click", () => updateEmployee(employee));
 }
@@ -49,3 +52,6 @@ function deleteEmployee(employeeId) {
         }
     });
 }
+
+
+

@@ -11,15 +11,7 @@ import java.util.List;
 @Table(name = "areas")
 public class Area {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column
     private String name;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "area", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Comment> comments;
 
     @JsonIgnore
     @OneToMany(mappedBy = "area", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

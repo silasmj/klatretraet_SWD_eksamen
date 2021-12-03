@@ -1,7 +1,9 @@
 package com.example.klatretraet_swd_eksamen.controllers;
 
 import com.example.klatretraet_swd_eksamen.DTO.EmployeeEditDTO;
+import com.example.klatretraet_swd_eksamen.models.Area;
 import com.example.klatretraet_swd_eksamen.models.Employee;
+import com.example.klatretraet_swd_eksamen.repositories.AreaRepository;
 import com.example.klatretraet_swd_eksamen.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,9 @@ import java.util.List;
 
 @RestController
 public class EmployeeController {
+
+    @Autowired
+    AreaRepository area;
 
     @Autowired
     EmployeeRepository employee;
@@ -31,15 +36,16 @@ public class EmployeeController {
     }
 
     @PatchMapping("/employees/{id}")
-    public String patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
+    public EmployeeEditDTO patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
         return employee.findById(id).map(foundEmployee -> {
-            if (employeeToUpdate.getArea() != null) foundEmployee.setArea(employeeToUpdate.getArea());
             if (employeeToUpdate.getCalculatedVacation() != 0) foundEmployee.setCalculatedVacation(employeeToUpdate.getCalculatedVacation());
             if (employeeToUpdate.getImage() != null) foundEmployee.setImage(employeeToUpdate.getImage());
             if (employeeToUpdate.getName() != null) foundEmployee.setName(employeeToUpdate.getName());
-            employee.save(foundEmployee);
-            return "Medarbejder opdateret";
-        }).orElse("Medarbejder ikke fundet");
+            if (employeeToUpdate.getArea() != null && employeeToUpdate.getArea().getName() != null) foundEmployee.setArea(employeeToUpdate.getArea());
+
+            Employee updatedEmployee = employee.save(foundEmployee);
+            return new EmployeeEditDTO(updatedEmployee, employeeToUpdate.getArea().getName());
+        }).orElse(new EmployeeEditDTO("medarbejder ikke fundet"));
     }
 
     @DeleteMapping("/employees/{id}")
