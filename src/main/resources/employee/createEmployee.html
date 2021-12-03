@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="employee.css">
     <link rel="stylesheet" href="../global/global.css">
     <script src="../global/global.js"></script>
-
     <title>Employee</title>
 </head>
 <body>
@@ -24,23 +23,28 @@
     </ul>
 </nav>
 
-<table class ="employee-body" id="employees-tbody">
-    <thead>
-    <tr>
-        <th>Medarbejder Id</th>
-        <th>Navn</th>
-        <th>Billede</th>
-        <th>Ferie</th>
-        <th>Stue</th>
-        <th>Rediger/slet</th>
-    </tr>
-    </thead>
-</table>
+<div id="create-employee-wrapper">
+    <h5>Indtast navn</h5>
+    <input id="create-employee-name" type="text" placeholder="Navn">
+    <h5>Vælg billede</h5>
+    <input id="create-employee-image" type="file" onchange="previewFile()"><br>
+    <img src="" height="400">
+    <h5>Vælg stue</h5>
+    <select id="create-match-area">Vælg stue
+        <option>Måge</option>
+        <option>Vibe</option>
+        <option>And</option>
+        <option>Terne</option>
+    </select>
+    <h5>Vælg antal feriedage</h5>
+    <input id="create-employee-calculatedVacation" type="number" step="0.01">
 
-<a href="./createEmployee.html">
-    <button>Opret ny medarbejder</button>
-</a>
-<script src="../employee/employeeToUpdate.js"></script>
+    <button  onclick="createEmployee()">Opret medarbejder</button>
+
+</div>
+
+
+
 <script src="employee.js"></script>
 <script src="employeeToCreate.js"></script>
 </body>
