@@ -20,6 +20,7 @@ public class Employee {
     private String image;
 
     @Column
+    @Nullable
     private double calculatedVacation;
 
     @ManyToOne(cascade = CascadeType.ALL)

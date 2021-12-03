@@ -20,12 +20,14 @@ function previewFile() {
 function createEmployee() {
         const name = document.getElementById("create-employee-name").value;
         const image = document.getElementById("create-employee-image").value;
+        const area_name = document.getElementById("create-employee-areaName").value;
         const calculatedVacation = document.getElementById("create-employee-calculatedVacation").value;
 
 
     const newEmployee = {
         name: name,
         image: image,
+        area_name: area_name,
         calculatedVacation: calculatedVacation
     };
 
@@ -42,7 +44,7 @@ function createEmployee() {
     });
 }
 
-document.getElementById("create-employee-btn")
-    .addEventListener("click", createEmployee);
+/*document.getElementById("create-employee-btn")
+    .addEventListener("click", createEmployee);*/
 
 
