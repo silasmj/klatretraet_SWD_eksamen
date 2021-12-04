@@ -15,7 +15,7 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    AreaRepository area;
+    AreaRepository areas;
 
     @Autowired
     EmployeeRepository employee;
@@ -37,6 +37,12 @@ public class EmployeeController {
         return employee.save(newEmployee);
     }
 
+    @PostMapping("/employees/{name}")
+    public Employee addEmployee(@RequestBody Employee newEmployee, @PathVariable String name){
+        newEmployee.setId(null);
+        newEmployee.setArea(areas.findById(name).get());
+        return employee.save(newEmployee);
+    }
     @PatchMapping("/employees/{id}")
     public EmployeeEditDTO patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
         return employee.findById(id).map(foundEmployee -> {

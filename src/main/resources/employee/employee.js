@@ -3,11 +3,10 @@ const employeeTableBody = document.getElementById("employees-tbody");
 fetch(baseURL + "/employees")
     .then(response => response.json())
     .then(employees => {
-        console.log(employees)
-        employees.map(createEmployee);
+        employees.map(createEmployeeTable);
     });
 
-function createEmployee(employee){
+function createEmployeeTable(employee){
     const employeeTableRow = document.createElement("tr");
     employeeTableRow.id = employee.id
 
@@ -31,7 +30,7 @@ function constructEmployeeTableRow(employeeTableRow, employee){
                 <p class="row-employee-calculatedVacation">${(employee.calculatedVacation)}</p>
             </td>
             <td>
-                <p class="row-employee-area">${(employee.area.name)}</p>
+                <p class="row-employee-areaName">${(employee.area.name)}</p>
             </td>
             <td>
                 <button id="update-button-${employee.id}">📝</button>                       

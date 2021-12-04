@@ -21,12 +21,12 @@ public class AreaController {
 
     @PostMapping("/areas")
     public Area addArea(@RequestBody Area newArea) {
-    newArea.setName(null);
+    //newArea.setArea(null);
     return areas.save(newArea);
     }
 
-    @DeleteMapping("/areas/{id}")
-    public void deleteAreaById(@PathVariable Long id) {
-        areas.deleteById(id);
+    @DeleteMapping("/areas/{name}")
+    public void deleteAreaById(@PathVariable String name) {
+        areas.deleteById(name);
     }
 }
