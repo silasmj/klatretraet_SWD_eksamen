@@ -13,13 +13,13 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column/*(columnDefinition = "default ")*/
+    @Column
     private String name;
 
     @Column
     private String image;
 
-    @Column/*(columnDefinition="default '0.00'")*/
+    @Column
     @Nullable
     private double calculatedVacation;
 

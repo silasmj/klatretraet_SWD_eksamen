@@ -24,6 +24,10 @@ table, th, td{
    width: 200px;
 }
 
-.new-employee-button{
-    text-align: center;
+.new-employee-button {
+    transition-duration: 0.4s;
+}
+.new-employee-button:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
 }

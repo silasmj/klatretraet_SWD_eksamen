@@ -13,9 +13,15 @@ function updateEmployee(employee){
        <td>
             <input id="update-employee-calculated-vacation-${employee.id}" value="${(employee.calculatedVacation)}">
        </td>
-       <td>
-            <input id="update-employee-area-${employee.id}" value="${employee.area.name}">
-       </td>
+        <td>
+            <select id="update-employee-area-${employee.id}">
+                <option "value="${employee.area.name}">Mågestuen</option>
+                <option "value="${employee.area.name}">Vibestue </option>
+                <option "value="${employee.area.name}">Andestuen</option>
+                <option "value="${employee.area.name}">Ternestuen</option>
+                <option "value="${employee.area.name}">Ikke tilknyttet en stue</option>
+            </select>    
+        </td>
        <td>
             <button id="cancel-update-${employee.id}">✖️</button>
             <button onclick="updateEmployeeBackEnd(${employee.id})">✅</button>

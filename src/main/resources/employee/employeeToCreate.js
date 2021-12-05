@@ -1,50 +1,55 @@
-const queryString = window.location.search;
-const URLParams = new URLSearchParams(queryString);
+const employeesFormDiv = document.getElementById("create-employee-form");
+const employeesFormExpandButton = document.getElementById("expand-employee-form");
 
-function previewFile() {
-    let preview = document.querySelector('img');
-    let file = document.querySelector('input[type=file]').files[0];
-    let reader = new FileReader();
 
-    reader.onloadend = function () {
-        preview.src = reader.result;
-    }
+const createEmployeeForm = `<div>
+    <label>Navn</label>
+    <input id="create-employee-name" placeholder="Navn">
+    <label>Billede</label>
+    <input id="create-employee-image" placeholder="Billede">
+    <label>Ferie</label>
+    <input id="create-employee-calculatedVacation" placeholder="Ferie">    
+    <label>Stue</label>
+    <input id="create-employee-area" placeholder="Stue">    
+    <button onclick="createEmployee()">Create a New Employee</button>
+</div>`;
 
-    if (file) {
-        reader.readAsDataURL(file);
-    } else {
-        preview.src = "";
-    }
+
+
+
+function showEmployeesForm() {
+    employeesFormExpandButton.style.display = "none";
+    employeesFormDiv.innerHTML = createEmployeeForm;
+}
+
+function removeEmployeesForm() {
+    employeesFormExpandButton.style.display = "block";
+    employeesFormDiv.innerHTML = "";
 }
 
 function createEmployee() {
-        const name = document.getElementById("create-employee-name").value;
-        const image = document.getElementById("create-employee-image").value;
-        const calculatedVacation = document.getElementById("create-employee-calculatedVacation").value;
-        const area = document.getElementById("create-employee-area").value;
+    const name = document.getElementById("create-employee-name").value;
+    const image = document.getElementById("create-employee-image").value;
+    const calculatedVacation = document.getElementById("create-employee-calculatedVacation").value;
+    const area = document.getElementById("create-employee-area").value;
 
+        const newEmployee = {
+            name: name,
+            image: image,
+            calculatedVacation: calculatedVacation,
+            areaName: area
 
-    const newEmployee = {
-        name: name,
-        image: image,
-        calculatedVacation: calculatedVacation,
-        area: area
     };
-
-    fetch(baseURL + "/employees", {
+    fetch(baseURL + "/employees/" + name, {
         method: "POST",
-        headers: { "Content-type": "application/json; charset=UTF-8" },
+        headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(newEmployee)
-    }).then(response => {
-        if (response.status === 200) {
-            console.log(response)
-        } else {
-            console.log("Medarbejder ikke oprettet", response.status);
-        }
-    });
+    }).then(response => response.json())
+        .then(employee => {
+            removeEmployeesForm();
+            createEmployeeTable(employee);
+        });
 }
 
-/*document.getElementById("create-employee-btn")
-    .addEventListener("click", createEmployee);*/
-
-
+document.getElementById("expand-employee-form")
+    .addEventListener("click", showEmployeesForm);

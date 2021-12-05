@@ -24,7 +24,7 @@ function constructEmployeeTableRow(employeeTableRow, employee){
                 <p class="row-employee-name">${(employee.name)}</p>
             </td>
             <td>
-                <img src="Logo.jpg" class="row-employee-image">${(employee.image)}</img>
+                <img src="abccc.png" class="row-employee-image">${(employee.image)}</img>
             </td>
             <td>
                 <p class="row-employee-calculatedVacation">${(employee.calculatedVacation)}</p>
