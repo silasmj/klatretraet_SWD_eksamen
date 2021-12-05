@@ -14,7 +14,7 @@ function updateEmployee(employee){
             <input id="update-employee-calculated-vacation-${employee.id}" value="${(employee.calculatedVacation)}">
        </td>
        <td>
-            <input id="update-employee-area-${employee.id}" value="${employee.area.name}">
+            <input id="update-employee-area-${employee.id}" value="${(employee.area.name)}">
        </td>
        <td>
             <button id="cancel-update-${employee.id}">✖️</button>
