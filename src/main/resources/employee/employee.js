@@ -10,7 +10,7 @@ function createEmployeeTable(employee){
     const employeeTableRow = document.createElement("tr");
     employeeTableRow.id = employee.id
 
-    employeeTableBody.appendChild(employeeTableRow);
+    employeeTableBody.append(employeeTableRow);
     constructEmployeeTableRow(employeeTableRow, employee);
 
 }
@@ -30,7 +30,7 @@ function constructEmployeeTableRow(employeeTableRow, employee){
                 <p class="row-employee-calculatedVacation">${(employee.calculatedVacation)}</p>
             </td>
             <td>
-                <p class="row-employee-areaName">${(employee.area.name)}</p>
+                <p class="row-employee-area">${(employee.area.name)}</p>
             </td>
             <td>
                 <button id="update-button-${employee.id}">📝</button>                       

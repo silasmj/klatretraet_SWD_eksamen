@@ -1,5 +1,6 @@
 package com.example.klatretraet_swd_eksamen.controllers;
 
+import com.example.klatretraet_swd_eksamen.DTO.EmployeeCreateDTO;
 import com.example.klatretraet_swd_eksamen.DTO.EmployeeEditDTO;
 import com.example.klatretraet_swd_eksamen.models.Area;
 import com.example.klatretraet_swd_eksamen.models.Employee;
@@ -30,7 +31,7 @@ public class EmployeeController {
         return employee.getById(id);
     }
 
-    @PostMapping("/employees")
+    /*@PostMapping("/employees")
     public Employee addEmployee(@RequestBody Employee newEmployee){
         newEmployee.setId(null);
 
@@ -42,7 +43,20 @@ public class EmployeeController {
         newEmployee.setId(null);
         newEmployee.setArea(areas.findById(name).get());
         return employee.save(newEmployee);
+    }*/
+
+    @PostMapping("employees/{name}")
+    public EmployeeCreateDTO createEmployee(@PathVariable String name, @RequestBody Employee employeeToCreate){
+        return areas.findById(name).map(area -> {
+            employeeToCreate.setId(null);
+            employeeToCreate.setArea(area);
+            Employee createdEmployee = employee.save(employeeToCreate);
+            return new EmployeeCreateDTO(createdEmployee, employeeToCreate.getArea().getName());
+        }
+        ).orElse(new EmployeeCreateDTO("Did not find the Area by area name"));
+
     }
+
     @PatchMapping("/employees/{id}")
     public EmployeeEditDTO patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
         return employee.findById(id).map(foundEmployee -> {

@@ -31,7 +31,7 @@ function createEmployee() {
     const name = document.getElementById("create-employee-name").value;
     const image = document.getElementById("create-employee-image").value;
     const calculatedVacation = document.getElementById("create-employee-calculatedVacation").value;
-    const area = document.getElementById("create-employee-area").value;
+    const area = {areaName: document.getElementById("create-employee-area").value};
 
         const newEmployee = {
             name: name,
