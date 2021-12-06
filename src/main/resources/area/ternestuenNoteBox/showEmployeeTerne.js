@@ -8,6 +8,7 @@ fetch(baseURL + "/employees")
     })
 
 function createEmployeeCard(employees) {
+    console.log(employees)
     const cardElement = document.createElement("div")
 
     cardElement.innerHTML = `
