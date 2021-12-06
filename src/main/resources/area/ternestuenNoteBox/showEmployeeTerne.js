@@ -4,10 +4,11 @@ fetch(baseURL + "/employees")
     .then(response => response.json())
     .then(result => {
         let terneEmployees = result.filter(employee => employee.area && employee.area.name == 'Ternestuen');
-        createEmployeeCard(terneEmployees);
+        terneEmployees.map(createEmployeeCard);
     })
 
 function createEmployeeCard(employees) {
+    console.log(employees)
     const cardElement = document.createElement("div")
 
     cardElement.innerHTML = `
