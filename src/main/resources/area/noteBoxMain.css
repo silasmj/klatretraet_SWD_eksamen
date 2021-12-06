@@ -74,7 +74,11 @@ body {
     flex-grow: 1;
 }
 
-.notes__title,
+.notes__title{
+    border: none;
+    outline: none;
+    width: 10em;
+}
 .notes__body {
     border: none;
     outline: none;
