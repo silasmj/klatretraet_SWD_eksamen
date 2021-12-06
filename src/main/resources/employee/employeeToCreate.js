@@ -31,24 +31,32 @@ function createEmployee() {
     const name = document.getElementById("create-employee-name").value;
     const image = document.getElementById("create-employee-image").value;
     const calculatedVacation = document.getElementById("create-employee-calculatedVacation").value;
-    const area = {areaName: document.getElementById("create-employee-area").value};
+    const areaName = document.getElementById("create-employee-area").value;
 
+    const newArea = {
+           name: areaName
+        }
         const newEmployee = {
             name: name,
             image: image,
             calculatedVacation: calculatedVacation,
-            areaName: area
+                area: newArea
+
 
     };
-    fetch(baseURL + "/employees/" + name, {
+    console.log(newEmployee)
+    fetch(baseURL + "/employees/" + areaName, {
         method: "POST",
         headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(newEmployee)
-    }).then(response => response.json())
-        .then(employee => {
+    }).then(response => {
+        if (response.status === 200) {
             removeEmployeesForm();
-            createEmployeeTable(employee);
-        });
+            console.log(response)
+        } else {
+            console.log("Medarbejder ikke oprettet.", response.status);
+        }
+    });
 }
 
 document.getElementById("expand-employee-form")
