@@ -7,17 +7,8 @@ let area = "Ternestuen";
 fetch(baseURL + "/employees")
     .then(response => response.json())
     .then(result => {
-       // employees = result.results;
-        //filteredEmployees = employees;
-        //employees.map(employee => handleFilteredEmployees(employee));
-        let terneEmployees = [];
-        for (let i = 0; i < result.length; i++) {
-            if (result[i].area.name == "Ternestuen") {
-                terneEmployees.push(result[i]);
-                console.log(terneEmployees);
-
-            }
-        }
+        let terneEmployees = result.filter(employee => employee.area && employee.area.name == 'Ternestuen');
+        console.log(terneEmployees)
     })
 
 function handleFilteredEmployees(employee) {

@@ -3,10 +3,11 @@ fetch(baseURL + "/employees")
     .then(result => {
         let andeEmployees = [];
         for (let i = 0; i < result.length; i++) {
-            if (result[i].area.name == "Andestuen") {
+            if (result[i].area.name === "Andestuen") {
                 andeEmployees.push(result[i]);
                 console.log(andeEmployees);
-
             }
         }
+        console.log(result);
+
     })
