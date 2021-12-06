@@ -1,0 +1,13 @@
+
+.float-child1 {
+    width: 75%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+}
+.float-child2{
+     width: 25%;
+     float: left;
+     padding: 20px;
+     border: 2px solid red;
+ }
