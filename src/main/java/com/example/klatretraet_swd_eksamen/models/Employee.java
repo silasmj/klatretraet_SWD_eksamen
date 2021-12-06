@@ -23,7 +23,7 @@ public class Employee {
     @Nullable
     private double calculatedVacation;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "area_name")
     @Nullable
     private Area area;

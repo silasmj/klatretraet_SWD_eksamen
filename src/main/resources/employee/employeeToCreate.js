@@ -51,6 +51,8 @@ function createEmployee() {
         body: JSON.stringify(newEmployee)
     }).then(response => {
         if (response.status === 200) {
+            location.reload();
+            return false;
             removeEmployeesForm();
             console.log(response)
         } else {

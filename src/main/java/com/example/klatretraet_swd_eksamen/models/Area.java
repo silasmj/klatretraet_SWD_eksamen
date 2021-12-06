@@ -14,6 +14,6 @@ public class Area {
     private String name;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "area", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "area", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<Employee> employees;
 }
