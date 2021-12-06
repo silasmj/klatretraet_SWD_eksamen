@@ -92,3 +92,36 @@
     top: 18%;
     left: 40%;
 }
+
+.float-container {
+    margin: 0;
+}
+
+.notes {
+    float:left;
+    width:75%;
+    overflow:hidden;
+    height: 40em;
+}
+
+
+.float-child {
+    float:left;
+    width:25%;
+    overflow:hidden;
+    display: table;
+    border-style:solid;
+    border-color: #B2EB71;
+    border-width: 3px;
+    background-color: #B2EB71;
+}
+.employee-img {
+    vertical-align: middle;
+    display: table-cell;
+    height: 2em;
+}
+span {
+    vertical-align: middle;
+    display: table-cell;
+    width: 3em;
+}
