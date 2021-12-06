@@ -1,13 +1,28 @@
-
-.float-child1 {
-    width: 75%;
-    float: left;
-    padding: 20px;
-    border: 2px solid red;
+.float-container {
+    margin: 0;
 }
-.float-child2{
-     width: 25%;
-     float: left;
-     padding: 20px;
-     border: 2px solid red;
- }
+
+.notes {
+    float:left;
+    width:75%;
+    overflow:hidden;
+    height: 40em;
+}
+
+
+.float-child {
+    float:left;
+    width:25%;
+    overflow:hidden;
+    display: table;
+}
+.employee-img {
+    vertical-align: middle;
+    display: table-cell;
+    height: 2em;
+}
+span {
+    vertical-align: middle;
+    display: table-cell;
+    width: 3em;
+}

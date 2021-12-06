@@ -12,8 +12,8 @@ function createEmployeeCard(employees) {
     const cardElement = document.createElement("div")
 
     cardElement.innerHTML = `
-        <p>${employees.name}</p>
-        <p>${employees.image}</p>
+        <span><img class="employee-img" src="../../img/abccc.png"></span>
+        <span>${employees.name}</span>
     `;
     employeeDiv.appendChild(cardElement);
 
