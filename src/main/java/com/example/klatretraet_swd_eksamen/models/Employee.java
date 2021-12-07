@@ -19,10 +19,6 @@ public class Employee {
     @Column
     private String image;
 
-    @Column
-    @Nullable
-    private double calculatedVacation;
-
     @ManyToOne
     @JoinColumn(name = "area_name")
     @Nullable

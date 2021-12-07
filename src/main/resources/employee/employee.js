@@ -17,18 +17,14 @@ function createEmployeeTable(employee){
 
 function constructEmployeeTableRow(employeeTableRow, employee){
     employeeTableRow.innerHTML = `
-            <td>
-                <p class="row-employee-id">${(employee.id)}</p>
-            </td>
+           
             <td>
                 <p class="row-employee-name">${(employee.name)}</p>
             </td>
             <td>
                 <img src="abccc.png" class="row-employee-image">${(employee.image)}</img>
             </td>
-            <td>
-                <p class="row-employee-calculatedVacation">${(employee.calculatedVacation)}</p>
-            </td>
+           
             <td>
                 <p class="row-employee-area">${(employee.area.name)}</p>
             </td>

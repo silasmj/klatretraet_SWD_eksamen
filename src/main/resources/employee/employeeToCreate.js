@@ -6,9 +6,7 @@ const createEmployeeForm = `<div>
     <label>Navn</label>
     <input id="create-employee-name" placeholder="Navn">
     <label>Billede</label>
-    <input id="create-employee-image" placeholder="Billede">
-    <label>Ferie</label>
-    <input id="create-employee-calculatedVacation" placeholder="Ferie">    
+    <input id="create-employee-image" placeholder="Billede"> 
     <label>Stue</label>
     <input id="create-employee-area" placeholder="Stue">    
     <button onclick="createEmployee()">Create a New Employee</button>

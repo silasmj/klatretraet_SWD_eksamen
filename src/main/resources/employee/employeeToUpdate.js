@@ -1,18 +1,14 @@
 function updateEmployee(employee){
     const tableRowToUpdate = document.getElementById(employee.id)
     tableRowToUpdate.innerHTML = `
-        <td>
-            <p id="update-employee-id-${employee.id}">${employee.id}</p>
-        </td>
+      
         <td>
             <input id="update-employee-name-${employee.id}" value="${(employee.name)}">
         </td>
        <td>
             <input id="update-employee-image-${employee.id}" value="${(employee.image)}">
        </td>
-       <td>
-            <input id="update-employee-calculated-vacation-${employee.id}" value="${(employee.calculatedVacation)}">
-       </td>
+    
         <td>
             <select id="update-employee-area-${employee.id}">
                 <option "value="${employee.area.name}">Mågestuen</option>
@@ -44,7 +40,6 @@ function updateEmployeeBackEnd(employeeId){
         id: employeeId,
         name: document.getElementById(`update-employee-name-${employeeId}`).value,
         image: document.getElementById(`update-employee-image-${employeeId}`).value,
-        calculatedVacation: document.getElementById(`update-employee-calculated-vacation-${employeeId}`).value,
         area: { name: document.getElementById(`update-employee-area-${employeeId}`).value}
     };
 

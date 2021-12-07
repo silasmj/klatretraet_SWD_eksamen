@@ -60,7 +60,6 @@ public class EmployeeController {
     @PatchMapping("/employees/{id}")
     public EmployeeEditDTO patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
         return employee.findById(id).map(foundEmployee -> {
-            if (employeeToUpdate.getCalculatedVacation() != 0) foundEmployee.setCalculatedVacation(employeeToUpdate.getCalculatedVacation());
             if (employeeToUpdate.getImage() != null) foundEmployee.setImage(employeeToUpdate.getImage());
             if (employeeToUpdate.getName() != null) foundEmployee.setName(employeeToUpdate.getName());
             if (employeeToUpdate.getArea() != null && employeeToUpdate.getArea().getName() != null) foundEmployee.setArea(employeeToUpdate.getArea());
