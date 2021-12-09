@@ -1,9 +1,14 @@
-let sum;
 let vacationBalance;
 let usedVacation;
-let newVacationBalance;
+let sum;
 
-function calculateVacation(sum, vacationBalance, usedVacation, newVacationBalance){
-    document.getElementById(vacationBalance).value;
+function calculateVacation(){
+    vacationBalance = 16;
+    usedVacation = 4;
+    sum = usedVacation - vacationBalance;
+
+    console.log(sum)
 
 }
+
+document.getElementById("calculate").addEventListener("click", calculateVacation)

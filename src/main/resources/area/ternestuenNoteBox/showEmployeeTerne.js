@@ -3,7 +3,7 @@ const employeeDiv = document.getElementById("employee-div")
 fetch(baseURL + "/employees")
     .then(response => response.json())
     .then(result => {
-        let terneEmployees = result.filter(employee => employee.area && employee.area.name == 'Ternestuen');
+        const terneEmployees = result.filter(employee => employee.area && employee.area.name === 'Ternestuen');
         terneEmployees.map(createEmployeeCard);
     })
 
@@ -18,5 +18,5 @@ function createEmployeeCard(employees) {
     employeeDiv.appendChild(cardElement);
 
 }
-
+employeeDiv.innerHTML = <script></script>
 
