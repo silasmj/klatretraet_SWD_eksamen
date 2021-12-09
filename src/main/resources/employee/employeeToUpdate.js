@@ -8,7 +8,6 @@ function updateEmployee(employee){
        <td>
             <input id="update-employee-image-${employee.id}" value="${(employee.image)}">
        </td>
-    
         <td>
             <select id="update-employee-area-${employee.id}">
                 <option "value="${employee.area.name}">Mågestuen</option>
@@ -54,5 +53,3 @@ function updateEmployeeBackEnd(employeeId){
         }
     });
 }
-
-        
