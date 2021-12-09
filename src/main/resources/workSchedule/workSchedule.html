@@ -27,25 +27,20 @@
     <input type="button" onClick="backward()" name="backward" value="<">
     <input type="button" onClick="forward()" name="forward" value=">">
 </div>
-<div class="tbody">
+
 <table class ="work-schedule-body" id="work-schedule-tbody">
     <thead>
     <h1>Vagtplan</h1>
     <tr>
-        <td>Navn</td>
-        <td>08:00-16:00</td>
-        <td>07:45-15:45</td>
-        <td>10:00-16:00</td>
-        <td>12:00-17:00</td>
-        <td>08:00-16:00</td>
-        <td>07:45-15:45</td>
-        <td>10:00-16:00</td>
-        <td>12:00-17:00</td>
-    </tr>
-    </thead>
-</table>
-<button type="button" onclick="myFunction()">Ny kolonne</button>
-</div>
+        <th style="font-weight: bold">Navn</th>
+        <th>Mandag</th>
+        <th>Tirsdag</th>
+        <th>Onsdag</th>
+        <th>Torsdag</th>
+        <th>Fredag 1</th>
+        <th>Fredag 2</th>
+        <th>Fredag 3</th>
+        <th>Fredag 4</th>
 
 
 <!--
@@ -61,7 +56,9 @@
         <th>Navn</th>
         <th>Navn</th>
     </tr>
+    </thead>
 </table>
+<button class="row-button" type="button" onclick="myFunction()">Ny kolonne</button>
 
 <button onclick="myFunctionn()">Nye tider</button>
 -->
