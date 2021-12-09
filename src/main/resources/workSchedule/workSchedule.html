@@ -13,6 +13,7 @@
         <img id="imglogo" src="../img/Logo.jpg">
     </a>
     <ul>
+        <label class="logo">Klatretræet</label>
         <li><a href="../index.html">Hjem</a></li>
         <li><a href="../employee/employee.html">Medarbejdere</a></li>
         <li><a href="../area/area.html">Stuer</a></li>
@@ -27,6 +28,44 @@
     <input type="button" onClick="backward()" name="backward" value="<">
     <input type="button" onClick="forward()" name="forward" value=">">
 </div>
+
+<table class ="work-schedule-body" id="work-schedule-tbody">
+    <thead>
+    <h1>Vagtplan</h1>
+    <tr>
+        <td>Navn</td>
+        <td>08:00-16:00</td>
+        <td>07:45-15:45</td>
+        <td>10:00-16:00</td>
+        <td>12:00-17:00</td>
+        <td>08:00-16:00</td>
+        <td>07:45-15:45</td>
+        <td>10:00-16:00</td>
+        <td>12:00-17:00</td>
+    </tr>
+    </thead>
+</table>
+<button type="button" onclick="myFunction()">Ny kolonne</button>
+
+
+
+<!--
+<table class ="work-schedule-body">
+    <h1>Vagtplan</h1>
+    <tr id="myRow">
+        <th>Tider</th>
+        <th>Tider</th>
+        <th>Tider</th>
+    </tr>
+    <tr>
+        <th>Navn</th>
+        <th>Navn</th>
+        <th>Navn</th>
+    </tr>
+</table>
+
+<button onclick="myFunctionn()">Nye tider</button>
+-->
 
 <script src="workSchedule.js"></script>
 </body>
