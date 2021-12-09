@@ -6,15 +6,15 @@ function myFunction() {
     var cell3 = row.insertCell(2)
     var cell4 = row.insertCell(3)
     var cell5 = row.insertCell(4)
-    var cell6= row.insertCell(5);
+    var cell6 = row.insertCell(5);
     var cell7 = row.insertCell(6);
     var cell8 = row.insertCell(7)
     var cell9 = row.insertCell(8)
-var range = document.getElementById('date_range');
-var offset = 0;
-var today = new Date();
-var dayOfWeekOffset = today.getDay();
-var id;
+    var range = document.getElementById('date_range');
+    var offset = 0;
+    var today = new Date();
+    var dayOfWeekOffset = today.getDay();
+    var id;
 
     cell1.innerHTML = "Medarbejder navn";
     cell2.innerHTML = "08:00-15:30";
@@ -26,54 +26,54 @@ var id;
     cell8.innerHTML = "09:00-16:30";
     cell9.innerHTML = "08:00-16:00";
 
-function getWeek(offset) {
-    offset = offset || 0; // if the function did not supply a new offset, the offset is 0
-    var firstDay = new Date();
-    firstDay.setDate(firstDay.getDate() - dayOfWeekOffset + (offset * 7));
-    // .setDate() sets the date (1-31) of the current month.
-    // The beginning of the week is:
-    //    today's date (firstDay.getDate())
-    //    minus the day of week offset to get us back to sunday (dayOfWeekOffset)
-    //    plus the number of days we need to offset for future / past weeks (offset * 7)
+    function getWeek(offset) {
+        offset = offset || 0; // if the function did not supply a new offset, the offset is 0
+        var firstDay = new Date();
+        firstDay.setDate(firstDay.getDate() - dayOfWeekOffset + (offset * 7));
+        // .setDate() sets the date (1-31) of the current month.
+        // The beginning of the week is:
+        //    today's date (firstDay.getDate())
+        //    minus the day of week offset to get us back to sunday (dayOfWeekOffset)
+        //    plus the number of days we need to offset for future / past weeks (offset * 7)
 
-    var lastDay = new Date(firstDay);
-    lastDay.setDate(lastDay.getDate() + 6);
-    // the last day is the first day plus 6
+        var lastDay = new Date(firstDay);
+        lastDay.setDate(lastDay.getDate() + 6);
+        // the last day is the first day plus 6
 
-    console.log(makeDateString(firstDay), makeDateString(lastDay));
-    range.innerHTML = 'Uge: ' + makeDateString(firstDay) + ' - ' + makeDateString(lastDay);
-}
+        console.log(makeDateString(firstDay), makeDateString(lastDay));
+        range.innerHTML = 'Uge: ' + makeDateString(firstDay) + ' - ' + makeDateString(lastDay);
+    }
 
 
-function makeDateString(date) {
-    var dd = date.getDate();
-    var mm = date.getMonth() + 1;
-    var y = date.getFullYear();
+    function makeDateString(date) {
+        var dd = date.getDate();
+        var mm = date.getMonth() + 1;
+        var y = date.getFullYear();
 
-    var dateString = dd + '/'+ mm + '/'+ y;
-    return dateString;
+        var dateString = dd + '/' + mm + '/' + y;
+        return dateString;
 
-}
+    }
 
-function backward() {
-    offset = offset - 1;
-    getWeek(offset);
-    let div = document.getElementsByClassName("tbody");
-    div.id = "tbody_div_" + ;
-    console.log(div.id)
-}
+    function backward() {
+        offset = offset - 1;
+        getWeek(offset);
+        let div = document.getElementsByClassName("tbody");
+        div.id = "tbody_div_" /*+ ;*/
+        console.log(div.id)
+    }
 
-function forward() {
-    offset = offset + 1;
-    getWeek(offset);
-    let div = document.getElementsByClassName("tbody");
-    div.id = "tbody_div_" + ;
-    console.log(div.id)
-}
+    function forward() {
+        offset = offset + 1;
+        getWeek(offset);
+        let div = document.getElementsByClassName("tbody");
+        div.id = "tbody_div_" /*+ ;*/
+        console.log(div.id)
+    }
 
-window.onload = function() {
-    getWeek();
-}
+    window.onload = function () {
+        getWeek();
+    }
 
 
     cell1.innerHTML = "x";
@@ -84,7 +84,8 @@ window.onload = function() {
     cell6.innerHTML = "x";
     cell7.innerHTML = "x";
     cell8.innerHTML = "x";
-    cell9.innerHTML = "x";
+    cell9.innerHTML = "x"
+};
 
 
 /*
