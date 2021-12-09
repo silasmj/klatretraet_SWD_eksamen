@@ -2,6 +2,7 @@ var range = document.getElementById('date_range');
 var offset = 0;
 var today = new Date();
 var dayOfWeekOffset = today.getDay();
+var id;
 
 
 function getWeek(offset) {
@@ -19,7 +20,7 @@ function getWeek(offset) {
     // the last day is the first day plus 6
 
     console.log(makeDateString(firstDay), makeDateString(lastDay));
-    range.innerHTML = 'week of ' + makeDateString(firstDay) + ' - ' + makeDateString(lastDay);
+    range.innerHTML = 'Uge: ' + makeDateString(firstDay) + ' - ' + makeDateString(lastDay);
 }
 
 
@@ -28,7 +29,7 @@ function makeDateString(date) {
     var mm = date.getMonth() + 1;
     var y = date.getFullYear();
 
-    var dateString = mm + '/'+ dd + '/'+ y;
+    var dateString = dd + '/'+ mm + '/'+ y;
     return dateString;
 
 }
@@ -36,11 +37,17 @@ function makeDateString(date) {
 function backward() {
     offset = offset - 1;
     getWeek(offset);
+    let div = document.getElementsByClassName("tbody");
+    div.id = "tbody_div_" + ;
+    console.log(div.id)
 }
 
 function forward() {
     offset = offset + 1;
     getWeek(offset);
+    let div = document.getElementsByClassName("tbody");
+    div.id = "tbody_div_" + ;
+    console.log(div.id)
 }
 
 window.onload = function() {
