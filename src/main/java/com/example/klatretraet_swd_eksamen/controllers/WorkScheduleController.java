@@ -1,6 +1,5 @@
 package com.example.klatretraet_swd_eksamen.controllers;
 
-import com.example.klatretraet_swd_eksamen.DTO.WorkScheduleDTO;
 import com.example.klatretraet_swd_eksamen.models.WorkSchedule;
 import com.example.klatretraet_swd_eksamen.repositories.WorkScheduleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +45,5 @@ public class WorkScheduleController {
             return "Found workschedule";
         }).orElse("Workschedule not found");
     }
-    
+
 }
