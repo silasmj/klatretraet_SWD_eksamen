@@ -49,21 +49,23 @@ function forward() {
 
 }
 function hide(div) {
-   console.log(div.id)
-   document.getElementById(div.id).style.display = "none";
+    console.log(div)
+    var x = document.getElementById(div);
+    x.style.display = "none";
 }
+
 function show(div) {
-    console.log(div.id)
-    document.getElementById(div.id).style.display = "block";
+    console.log(div)
+    var x = document.getElementById(div);
+    x.style.display = "block";
+
 }
 
 function setDiv(offset) {
     var firstDay = new Date();
     firstDay.setDate(firstDay.getDate() - dayOfWeekOffset + (offset * 7));
     var id_div = makeDateString(firstDay)
-    let div = document.getElementsByClassName("work-schedule-div");
-    div.id = "div_body_" + id_div;
-    console.log(div.id)
+    var div = document.getElementsByClassName("work-schedule-div")[0].id = id_div;
     return div;
 }
 
