@@ -45,35 +45,37 @@
     <input type="reset" value="clear"/>
     <input type="button" value="Clear"/>
 </form>
+<div class="work-schedule-div">
+    <table id="work-schedule-tbody">
+        <thead>
+        <tr>
+            <th style="font-weight: bold">Navn</th>
+            <th>Mandag</th>
+            <th>Tirsdag</th>
+            <th>Onsdag</th>
+            <th>Torsdag</th>
+            <th>Fredag 1</th>
+            <th>Fredag 2</th>
+            <th>Fredag 3</th>
+            <th>Fredag 4</th>
 
-<table id="work-schedule-tbody">
-    <thead>
-    <tr>
-        <th style="font-weight: bold">Navn</th>
-        <th>Mandag</th>
-        <th>Tirsdag</th>
-        <th>Onsdag</th>
-        <th>Torsdag</th>
-        <th>Fredag 1</th>
-        <th>Fredag 2</th>
-        <th>Fredag 3</th>
-        <th>Fredag 4</th>
+        </tr>
+        <tr>
+            <th style="color: red; font-weight: bold">Sovebørn</th>
+            <th>Ænder</th>
+            <th>Terner</th>
+            <th>Viber</th>
+            <th>Måger</th>
+            <th>Ænder</th>
+            <th>Ænder</th>
+            <th>Ænder</th>
+            <th>Ænder</th>
 
-    </tr>
-    <tr>
-        <th style="color: red; font-weight: bold">Sovebørn</th>
-        <th>Ænder</th>
-        <th>Terner</th>
-        <th>Viber</th>
-        <th>Måger</th>
-        <th>Ænder</th>
-        <th>Ænder</th>
-        <th>Ænder</th>
-        <th>Ænder</th>
+        </tr>
+        </thead>
+    </table>
+</div>
 
-    </tr>
-    </thead>
-</table>
 <button class="row-button" type="button" onclick="showTables()">Ny kolonne</button>
 <input type="button" value="delete localstorage" onclick="deleteData();"/>
 
