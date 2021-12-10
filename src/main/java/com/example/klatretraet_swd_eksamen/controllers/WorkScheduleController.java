@@ -16,6 +16,10 @@ public class WorkScheduleController {
     public List<WorkSchedule> getWorkSchedule(){
         return workSchedule.findAll();
     }
+    @GetMapping("/workSchedule/{id}")
+    public WorkSchedule getWorkScheduleById(@PathVariable Long id){
+        return workSchedule.findById(id).get();
+    }
 
     @PostMapping("/workSchedule")
     public WorkSchedule createWorkSchedule(@RequestBody WorkSchedule newWorkSchedule){
