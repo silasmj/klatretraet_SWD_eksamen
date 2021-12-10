@@ -33,12 +33,13 @@ function createEmployee() {
 
     const newArea = {
            name: areaName
-        }
-        const newEmployee = {
-            name: name,
-            image: image,
-            calculatedVacation: calculatedVacation,
-                area: newArea
+    };
+
+    const newEmployee = {
+        name: name,
+        image: image,
+        calculatedVacation: calculatedVacation,
+            area: newArea
 
 
     };
