@@ -29,55 +29,38 @@
 </div>
 
 <h1>Vagtplan</h1>
+<button id="expand-work-schedule-form">Matches ➕</button>
 
-<form onsubmit="addTables(); return false;">
-    <input type="text" id="navn" placeholder="Indtast medarbejder navn"/><br>
-    <input type="text" id="mandag" placeholder="Indtast tidspunkt"/><br>
-    <input type="text" id="tirsdag" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="onsdag" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="torsdag" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="fredag1" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="fredag2" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="fredag3" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="fredag4" placeholder="Indtast Indtast tidspunkt"/><br>
+<div id="create-work-schedule-form"></div>
 
-    <input type="submit" value="Add to table"/>
-    <input type="reset" value="clear"/>
-    <input type="button" value="Clear"/>
-</form>
-<div class="work-schedule-div">
-    <table id="work-schedule-tbody">
-        <thead>
-        <tr>
-            <th style="font-weight: bold">Navn</th>
-            <th>Mandag</th>
-            <th>Tirsdag</th>
-            <th>Onsdag</th>
-            <th>Torsdag</th>
-            <th>Fredag 1</th>
-            <th>Fredag 2</th>
-            <th>Fredag 3</th>
-            <th>Fredag 4</th>
+<table id="work-schedule-tbody">
+    <thead>
+    <tr>
+        <td style="font-weight: bold">Navn</td>
+        <th>Mandag</th>
+        <th>Tirsdag</th>
+        <th>Onsdag</th>
+        <th>Torsdag</th>
+        <th>Fredag 1</th>
+        <th>Fredag 2</th>
+        <th>Fredag 3</th>
+        <th>Fredag 4</th>
 
-        </tr>
-        <tr>
-            <th style="color: red; font-weight: bold">Sovebørn</th>
-            <th>Ænder</th>
-            <th>Terner</th>
-            <th>Viber</th>
-            <th>Måger</th>
-            <th>Ænder</th>
-            <th>Ænder</th>
-            <th>Ænder</th>
-            <th>Ænder</th>
+    </tr>
+    <tr>
+        <th style="color: red; font-weight: bold">Sovebørn</th>
+        <th>Ænder</th>
+        <th>Terner</th>
+        <th>Viber</th>
+        <th>Måger</th>
+        <th>Ænder</th>
+        <th>Ænder</th>
+        <th>Ænder</th>
+        <th>Ænder</th>
 
-        </tr>
-        </thead>
-    </table>
-</div>
-
-<button class="row-button" type="button" onclick="showTables()">Ny kolonne</button>
-<input type="button" value="delete localstorage" onclick="deleteData();"/>
+    </tr>
+    </thead>
+</table>
 
 <script src="dateHandling.js"></script>
 <script src="workSchedule.js"></script>
