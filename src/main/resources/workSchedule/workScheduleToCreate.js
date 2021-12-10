@@ -1,6 +1,6 @@
 
 const workScheduleFormDiv = document.getElementById("create-work-schedule-form");
-const workScheduleFormExpandButton = document.getElementById("expand-work-schedule-form");
+const workScheduleFormExpandButton = document.getElementById("show-work-schedule-form");
 
 
 const createWorkScheduleForm = `<div>
@@ -29,7 +29,10 @@ function showWorkScheduleForm() {
     workScheduleFormExpandButton.style.display = "none";
     workScheduleFormDiv.innerHTML = createWorkScheduleForm;
 }
-
+function removeWorkScheduleForm() {
+    workScheduleFormExpandButton.style.display = "block";
+    workScheduleFormDiv.innerHTML = "";
+}
 function createWorkSchedule(){
     const name = document.getElementById("create-work-schedule-name").value;
     const monday = document.getElementById("create-work-schedule-monday").value;
@@ -68,3 +71,5 @@ function createWorkSchedule(){
     });
 }
 
+document.getElementById("show-work-schedule-form")
+.addEventListener("click", showWorkScheduleForm);
