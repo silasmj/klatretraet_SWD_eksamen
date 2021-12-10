@@ -19,11 +19,11 @@ public class WorkScheduleController {
 
     @PostMapping("/workSchedule")
     public WorkSchedule createWorkSchedule(@RequestBody WorkSchedule newWorkSchedule){
-        newWorkSchedule.setId(null);
+        //newWorkSchedule.setId(null);
         return workSchedule.save(newWorkSchedule);
     }
 
-    @DeleteMapping("workSchedule/{id}")
+    @DeleteMapping("/workSchedule/{id}")
     public void deleteWorkScheduleById(@PathVariable Long id){
         workSchedule.deleteById(id);
     }
