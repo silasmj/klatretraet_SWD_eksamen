@@ -6,7 +6,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name="workschedule")
+@Table(name="workschedules")
 @Data
 public class WorkSchedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
