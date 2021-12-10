@@ -1,6 +1,5 @@
 package com.example.klatretraet_swd_eksamen.DTO;
 
-import com.example.klatretraet_swd_eksamen.models.Area;
 import com.example.klatretraet_swd_eksamen.models.Employee;
 
 public class EmployeeEditDTO {
