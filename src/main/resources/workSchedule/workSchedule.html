@@ -29,27 +29,14 @@
 </div>
 
 <h1>Vagtplan</h1>
+<button id="expand-work-schedule-form">Matches ➕</button>
 
-<form onsubmit="addTables(); return false;">
-    <input type="text" id="navn" placeholder="Indtast medarbejder navn"/><br>
-    <input type="text" id="mandag" placeholder="Indtast tidspunkt"/><br>
-    <input type="text" id="tirsdag" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="onsdag" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="torsdag" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="fredag1" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="fredag2" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="fredag3" placeholder="Indtast Indtast tidspunkt"/><br>
-    <input type="text" id="fredag4" placeholder="Indtast Indtast tidspunkt"/><br>
-
-    <input type="submit" value="Add to table"/>
-    <input type="reset" value="clear"/>
-    <input type="button" value="Clear"/>
-</form>
+<div id="create-work-schedule-form"></div>
 
 <table id="work-schedule-tbody">
     <thead>
     <tr>
-        <th style="font-weight: bold">Navn</th>
+        <td style="font-weight: bold">Navn</td>
         <th>Mandag</th>
         <th>Tirsdag</th>
         <th>Onsdag</th>
@@ -74,8 +61,6 @@
     </tr>
     </thead>
 </table>
-<button class="row-button" type="button" onclick="showTables()">Ny kolonne</button>
-<input type="button" value="delete localstorage" onclick="deleteData();"/>
 
 <script src="dateHandling.js"></script>
 <script src="workSchedule.js"></script>
