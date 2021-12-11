@@ -75,6 +75,7 @@ window.onload = function() {
         element[x].style.display = "none";
     }
     getWeek();
-    setDiv(offset)
+    var div = setDiv(offset)
+    show(div);
 }
 
