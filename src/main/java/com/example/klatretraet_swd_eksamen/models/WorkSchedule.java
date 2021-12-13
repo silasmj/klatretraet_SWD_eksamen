@@ -4,6 +4,7 @@ import com.sun.istack.Nullable;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="workschedules")
@@ -15,38 +16,15 @@ public class WorkSchedule {
     private Long id;
 
     @Column
-    private String name;
+    private String employeeName;
 
     @Column
-    @Nullable
-    private String monday;
+    private Date date;
 
     @Column
-    @Nullable
-    private String tuesday;
+    private double startWorkingHour;
 
     @Column
-    @Nullable
-    private String wednesday;
-
-    @Column
-    @Nullable
-    private String thursday ;
-
-    @Column
-    @Nullable
-    private String friday1 ;
-
-    @Column
-    @Nullable
-    private String friday2;
-
-    @Column
-    @Nullable
-    private String friday3;
-
-    @Column
-    @Nullable
-    private String friday4;
+    private double endWorkingHour;
 
 }
