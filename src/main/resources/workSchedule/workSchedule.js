@@ -17,8 +17,27 @@ function createWorkscheduleTableRow(workschedule) {
 
 function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {
     workscheduleTableRow.innerHTML = `
-        <td class="row-workschedule-name">${workschedule.employeeName}</td>
-        <td class="row-workschedule-"></td>
+        <td class="row-workschedule-name">
+            <p>${workschedule.employeeName}</p>
+        </td>
+        <td class="row-workschedule-monday-workhours">
+            <p>${workschedule.startWorkingHour} - ${workschedule.endWorkingHour}</p>
+        </td>
+        <td class="row-workschedule-tuesday-workhours">
+        
+        </td>
+         <td class="row-workschedule-wednesday-workhours">
+        
+        </td>
+         <td class="row-workschedule-thursday-workhours">
+        
+        </td>
+         <td class="row-workschedule-friday-workhours">
+        
+        </td>
+         <td class="row-workschedule-delete">
+        
+        </td>
     `;
 }
 function addRowToTable() {
