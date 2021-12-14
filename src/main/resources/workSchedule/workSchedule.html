@@ -29,43 +29,41 @@
 </div>
 
 <h1>Vagtplan</h1>
-
-<button onclick="addRowToTable()">Ny række ➕</button>
-
+<button id="show-work-schedule-form">Matches ➕</button>
 
 <div id="create-work-schedule-form"></div>
 <div class="work-schedule-div" id="">
 
     <table id="work-schedule-tbody">
         <thead>
-        <tr>
-            <td style="font-weight: bold">Navn</td>
-            <th>Mandag</th>
-            <th>Tirsdag</th>
-            <th>Onsdag</th>
-            <th>Torsdag</th>
-            <th>Fredag</th>
-        </tr>
+            <tr>
+                <td style="font-weight: bold">Navn</td>
+                <th>Mandag</th>
+                <th>Tirsdag</th>
+                <th>Onsdag</th>
+                <th>Torsdag</th>
+                <th>Fredag</th>
+            </tr>
         </thead>
         <tbody id="workschedule-tbody">
 
         </tbody>
         <thead>
-        <tr>
-            <th style="color: red; font-weight: bold">Sovebørn</th>
-            <th>Ænder</th>
-            <th>Terner</th>
-            <th>Viber</th>
-            <th>Måger</th>
-            <th>Ænder</th>
-
-        </tr>
+            <tr>
+                <th style="color: red; font-weight: bold">Sovebørn</th>
+                <th>Ænder</th>
+                <th>Terner</th>
+                <th>Viber</th>
+                <th>Måger</th>
+                <th>Ænder</th>
+            </tr>
         </thead>
+
     </table>
 </div>
 
+<script src="workScheduleEdit.js"></script>
 <script src="dateHandling.js"></script>
-<script src="workSchedule.js"></script>
 
 </body>
 </html>

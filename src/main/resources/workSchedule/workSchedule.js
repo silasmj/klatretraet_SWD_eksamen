@@ -1,3 +1,26 @@
+const workscheduleTableBody = document.getElementById("workschedule-tbody");
+
+fetch(baseURL + "/workSchedule")
+    .then(response => response.json())
+    .then(result => {
+        result.map(createWorkscheduleTableRow)
+    })
+
+function createWorkscheduleTableRow(workschedule) {
+    const workscheduleTableRow = document.createElement("tr");
+    workscheduleTableRow.id = workschedule.id;
+
+    workscheduleTableBody.appendChild(workscheduleTableRow);
+
+    constructWorkscheduleTableRow(workscheduleTableRow, workschedule);
+}
+
+function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {
+    workscheduleTableRow.innerHTML = `
+        <td class="row-workschedule-name">${workschedule.employeeName}</td>
+        <td class="row-workschedule-"></td>
+    `;
+}
 function addRowToTable() {
     var table = document.getElementById("workschedule-tbody");
     var row = table.insertRow(0);
