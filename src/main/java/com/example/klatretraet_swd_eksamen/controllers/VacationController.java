@@ -1,7 +1,9 @@
 package com.example.klatretraet_swd_eksamen.controllers;
 
 import com.example.klatretraet_swd_eksamen.DTO.VacationDTO;
+import com.example.klatretraet_swd_eksamen.models.Area;
 import com.example.klatretraet_swd_eksamen.models.Vacation;
+import com.example.klatretraet_swd_eksamen.models.WorkSchedule;
 import com.example.klatretraet_swd_eksamen.repositories.EmployeeRepository;
 import com.example.klatretraet_swd_eksamen.repositories.VacationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +25,24 @@ public class VacationController {
         return vacations.findAll();
     }
 
-    @PostMapping("/vacations/{id}")
-    public VacationDTO createVacation(@PathVariable Long id, @RequestBody Vacation vacationToCreate) {
-        return employees.findById(id).map(employee -> {
-                    vacationToCreate.setId(null);
-                    vacationToCreate.setEmployee(employee);
-                    Vacation createdVacation = vacations.save(vacationToCreate);
-                    return new VacationDTO(createdVacation, vacationToCreate.getEmployee().getName());
-                }
-        ).orElse(new VacationDTO("Did not find the employee by id"));
+    @PostMapping("/vacations")
+    public Vacation addVacation(@RequestBody Vacation newVacation) {
+        //newArea.setArea(null);
+        return vacations.save(newVacation);
+    }
+
+    @PatchMapping("/vacations/{id}")
+    public String updateVacations(@PathVariable Long id, @RequestBody Vacation vacationToUpdate){
+        return vacations.findById(id).map(foundVacation -> {
+            if (vacationToUpdate.getEarnedVacation() != 0) foundVacation.setEarnedVacation(vacationToUpdate.getEarnedVacation());
+            if (vacationToUpdate.getUsedVacation() != 0) foundVacation.setUsedVacation(vacationToUpdate.getUsedVacation());
+            if (vacationToUpdate.getCurrentVacation() != 0) foundVacation.setCurrentVacation(vacationToUpdate.getCurrentVacation());
+            if (vacationToUpdate.getDate() != null) foundVacation.setDate(vacationToUpdate.getDate());
+            if (vacationToUpdate.getEmployeeName() != null) foundVacation.setEmployeeName(vacationToUpdate.getEmployeeName());
+
+            vacations.save(foundVacation);
+            return "Found vacation";
+        }).orElse("vacation not found");
     }
 
     @DeleteMapping("/vacations/{id}")

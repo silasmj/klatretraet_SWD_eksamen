@@ -1,5 +1,6 @@
 package com.example.klatretraet_swd_eksamen.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.lang.Nullable;
 
@@ -27,8 +28,6 @@ public class Vacation {
     @Column
     private Date date;
 
-    @Nullable
-    @OneToOne
-    @JoinColumn(name = "employee_name")
-    private Employee employee;
+    @Column
+    private String employeeName;
 }

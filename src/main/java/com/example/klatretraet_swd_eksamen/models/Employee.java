@@ -1,5 +1,6 @@
 package com.example.klatretraet_swd_eksamen.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.Nullable;
 import lombok.Data;
 
@@ -24,6 +25,4 @@ public class Employee {
     @Nullable
     private Area area;
 
-    @OneToOne(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    private Vacation vacation;
 }
