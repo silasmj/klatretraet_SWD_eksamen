@@ -24,10 +24,9 @@ const createVacationForm = `
         <input id="employeeName" placeholder="Fulde navn">
     </div>
     <div>
-        <button onclick="vacation()">Udregn ny feriesaldo</button>
+        <button onclick="createVacation()">Udregn ny feriesaldo</button>
+        <button onclick="removeVacationsForm();">Annuler</button>
     </div>`;
-
-
 
 
 function showVacationsForm() {
@@ -57,7 +56,7 @@ function createVacation() {
 
     console.log(newVacation)
 
-    fetch(baseURL + "/vacation/", {
+    fetch(baseURL + "/vacations/", {
         method: "POST",
         headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(newVacation)
@@ -65,7 +64,6 @@ function createVacation() {
         if (response.status === 200) {
             location.reload();
             return false;
-            removeVacationsForm();
             console.log(response)
         } else {
             console.log("Medarbejder ikke oprettet.", response.status);

@@ -43,7 +43,7 @@ public class EmployeeController {
         return employee.save(newEmployee);
     }*/
 
-    @PostMapping("employees/{name}")
+    @PostMapping("/employees/{name}")
     public EmployeeCreateDTO createEmployee(@PathVariable String name, @RequestBody Employee employeeToCreate){
         return areas.findById(name).map(area -> {
             employeeToCreate.setId(null);

@@ -99,4 +99,38 @@ a.active,a:hover{
     margin-left: 8px;
 }
 
+/*Tidligere employee css*/
 
+table, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.employee-body{
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+
+}
+.employee-body thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.employee-body th,
+.employee-body td {
+    padding: 12px 15px;
+}
+.update-button{
+    width: 200px;
+}
+
+.new-employee-button {
+    transition-duration: 0.4s;
+}
+.new-employee-button:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
