@@ -29,7 +29,7 @@
 </div>
 
 <h1>Vagtplan</h1>
-<button id="show-work-schedule-form">Matches ➕</button>
+<button onclick="addRowToTable()">Ny række ➕</button>
 
 <div id="create-work-schedule-form"></div>
 <div class="work-schedule-div" id="">
@@ -43,7 +43,6 @@
                 <th>Onsdag</th>
                 <th>Torsdag</th>
                 <th>Fredag</th>
-                <th>Fjern</th>
             </tr>
         </thead>
         <tbody id="workschedule-tbody">
@@ -57,7 +56,6 @@
                 <th>Viber</th>
                 <th>Måger</th>
                 <th>Ænder</th>
-                <th>Kan ikke slettes</th>
             </tr>
         </thead>
 
@@ -66,6 +64,7 @@
 
 <script src="workScheduleEdit.js"></script>
 <script src="dateHandling.js"></script>
+<script src="workSchedule.js"></script>
 
 </body>
 </html>
