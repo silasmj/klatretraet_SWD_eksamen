@@ -28,7 +28,6 @@ function removeEmployeesForm() {
 function createEmployee() {
     const name = document.getElementById("create-employee-name").value;
     const image = document.getElementById("create-employee-image").value;
-    const calculatedVacation = document.getElementById("create-employee-calculatedVacation").value;
     const areaName = document.getElementById("create-employee-area").value;
 
     const newArea = {
@@ -38,12 +37,12 @@ function createEmployee() {
     const newEmployee = {
         name: name,
         image: image,
-        calculatedVacation: calculatedVacation,
-            area: newArea
-
+        area: newArea
 
     };
+
     console.log(newEmployee)
+
     fetch(baseURL + "/employees/" + areaName, {
         method: "POST",
         headers: {"Content-type": "application/json; charset=UTF-8"},

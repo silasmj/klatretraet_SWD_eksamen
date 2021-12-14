@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../global/global.css">
-    <link rel="stylesheet" href="calculateVacation.css">
+    <link rel="stylesheet" href="Vacation.css">
     <script src="../global/global.js"></script>
     <title>Klatretræet - Udregn ferie</title>
 </head>
@@ -18,7 +18,7 @@
         <li><a href="../employee/employee.html">Medarbejdere</a></li>
         <li><a href="../area/area.html">Stuer</a></li>
         <li><a href="../workSchedule/workSchedule.html">Vagtplan</a></li>
-        <li><a class="active" href="calculateVacation.html">Udregn ferie</a></li>
+        <li><a class="active" href="Vacation.html">Udregn ferie</a></li>
         <li><a href="#">Kalender</a></li>
     </ul>
 </nav>
@@ -26,26 +26,33 @@
 <h2 style="margin: auto; text-align: center" >Beregn feriedage</h2>
 <form>
     <div>
-        <label>Optjent ferie</label>
-        <input id="vacationBalance" type="number">
-        <button id="calculate">Click</button>
+        <label>Optjent ferie i timer</label>
+        <input id="earnedVacation" type="number">
+    </div>
+    <div>
+        <label>Brugt ferie i timer</label>
+        <input id="usedVacation" type="number">
+    </div>
+    <div>
+        <label>Ferie i timer</label>
+        <input id="currentVacation" type="number">
     </div>
     <div>
         <label>Dato for ferie</label>
-        <input id="vacationDate" type="date">
+        <input id="date" type="date">
     </div>
     <div>
-        <label>Antal brugte feriedage</label>
-        <input id="vacationUsed" type="number">
+        <label>Medarbejder navn</label>
+        <input id="employeeName">
     </div>
     <div>
-        <button onclick="calculateVacation()">Udregn ny feriesaldo</button>
-    </div>
-    <div>
-        <label id="newVacationBalance">Ny feriedage saldo</label>
+        <button onclick="vacation()">Udregn ny feriesaldo</button>
     </div>
 </form>
 
-<script src="calculateVacation.js"></script>
+<button class = "new-employee-button" id="expand-employee-form">Ny Medarbejder➕</button>
+
+
+<script src="Vacation.js"></script>
 </body>
 </html>
