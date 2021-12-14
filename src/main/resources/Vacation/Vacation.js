@@ -2,7 +2,7 @@ let vacationBalance;
 let usedVacation;
 let sum;
 
-function calculateVacation(){
+function vacation(){
     vacationBalance = 16;
     usedVacation = 4;
     sum = usedVacation - vacationBalance;
@@ -11,4 +11,4 @@ function calculateVacation(){
 
 }
 
-document.getElementById("calculate").addEventListener("click", calculateVacation)
+document.getElementById("calculate").addEventListener("click", vacation)

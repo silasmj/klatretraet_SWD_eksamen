@@ -2,12 +2,10 @@ package com.example.klatretraet_swd_eksamen.controllers;
 
 import com.example.klatretraet_swd_eksamen.DTO.EmployeeCreateDTO;
 import com.example.klatretraet_swd_eksamen.DTO.EmployeeEditDTO;
-import com.example.klatretraet_swd_eksamen.models.Area;
 import com.example.klatretraet_swd_eksamen.models.Employee;
 import com.example.klatretraet_swd_eksamen.repositories.AreaRepository;
 import com.example.klatretraet_swd_eksamen.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,16 +17,16 @@ public class EmployeeController {
     AreaRepository areas;
 
     @Autowired
-    EmployeeRepository employee;
+    EmployeeRepository employees;
 
     @GetMapping("/employees")
     public List<Employee> getEmployees(){
-        return employee.findAll();
+        return employees.findAll();
     }
 
     @GetMapping("/employees/{id}")
     public Employee getEmployeeById(@PathVariable Long id){
-        return employee.getById(id);
+        return employees.getById(id);
     }
 
     /*@PostMapping("/employees")
@@ -50,7 +48,7 @@ public class EmployeeController {
         return areas.findById(name).map(area -> {
             employeeToCreate.setId(null);
             employeeToCreate.setArea(area);
-            Employee createdEmployee = employee.save(employeeToCreate);
+            Employee createdEmployee = employees.save(employeeToCreate);
             return new EmployeeCreateDTO(createdEmployee, employeeToCreate.getArea().getName());
         }
         ).orElse(new EmployeeCreateDTO("Did not find the Area by area name"));
@@ -59,19 +57,19 @@ public class EmployeeController {
 
     @PatchMapping("/employees/{id}")
     public EmployeeEditDTO patchEmployeeById(@PathVariable Long id, @RequestBody Employee employeeToUpdate) {
-        return employee.findById(id).map(foundEmployee -> {
+        return employees.findById(id).map(foundEmployee -> {
             if (employeeToUpdate.getImage() != null) foundEmployee.setImage(employeeToUpdate.getImage());
             if (employeeToUpdate.getName() != null) foundEmployee.setName(employeeToUpdate.getName());
             if (employeeToUpdate.getArea() != null && employeeToUpdate.getArea().getName() != null) foundEmployee.setArea(employeeToUpdate.getArea());
 
-            Employee updatedEmployee = employee.save(foundEmployee);
+            Employee updatedEmployee = employees.save(foundEmployee);
             return new EmployeeEditDTO(updatedEmployee, employeeToUpdate.getArea().getName());
         }).orElse(new EmployeeEditDTO("medarbejder ikke fundet"));
     }
 
     @DeleteMapping("/employees/{id}")
     public void deleteEmployeeById(@PathVariable Long id){
-        employee.deleteById(id);
+        employees.deleteById(id);
     }
 
 }
