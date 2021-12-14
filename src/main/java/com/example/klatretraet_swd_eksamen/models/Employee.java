@@ -23,4 +23,7 @@ public class Employee {
     @JoinColumn(name = "area_name")
     @Nullable
     private Area area;
+
+    @OneToOne(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    private Vacation vacation;
 }
