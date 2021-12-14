@@ -35,10 +35,14 @@ public class WorkScheduleController {
     @PatchMapping("workSchedule/{id}")
     public String updateWorkSchedule(@PathVariable Long id, @RequestBody WorkSchedule workScheduleToUpdate){
         return workSchedule.findById(id).map(foundWorkSchedule -> {
+            if (workScheduleToUpdate.getYear() != 0) foundWorkSchedule.setYear(workScheduleToUpdate.getYear());
+            if (workScheduleToUpdate.getWeekNumber() != 0) foundWorkSchedule.setWeekNumber(workScheduleToUpdate.getWeekNumber());
             if (workScheduleToUpdate.getEmployeeName() != null) foundWorkSchedule.setEmployeeName(workScheduleToUpdate.getEmployeeName());
-            if (workScheduleToUpdate.getDate() != null) foundWorkSchedule.setDate(workScheduleToUpdate.getDate());
-            if (workScheduleToUpdate.getStartWorkingHour() != 0) foundWorkSchedule.setStartWorkingHour(workScheduleToUpdate.getStartWorkingHour());
-            if (workScheduleToUpdate.getEndWorkingHour() != 0) foundWorkSchedule.setEndWorkingHour(workScheduleToUpdate.getEndWorkingHour());
+            if (workScheduleToUpdate.getMonday() != null) foundWorkSchedule.setMonday(workScheduleToUpdate.getMonday());
+            if (workScheduleToUpdate.getTuesday() != null) foundWorkSchedule.setTuesday(workScheduleToUpdate.getTuesday());
+            if (workScheduleToUpdate.getWednesday() != null) foundWorkSchedule.setWednesday(workScheduleToUpdate.getWednesday());
+            if (workScheduleToUpdate.getThursday() != null) foundWorkSchedule.setThursday(workScheduleToUpdate.getThursday());
+            if (workScheduleToUpdate.getFriday() != null) foundWorkSchedule.setFriday(workScheduleToUpdate.getFriday());
             workSchedule.save(foundWorkSchedule);
             return "Found workschedule";
         }).orElse("Workschedule not found");

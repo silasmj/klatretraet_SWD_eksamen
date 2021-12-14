@@ -17,18 +17,34 @@ public class WorkSchedule {
 
     @Column
     @Nullable
+    private int year;
+
+    @Column
+    @Nullable
+    private int weekNumber;
+
+    @Column
+    @Nullable
     private String employeeName;
 
     @Column
     @Nullable
-    private Date date;
+    private String monday;
 
     @Column
     @Nullable
-    private double startWorkingHour;
+    private String tuesday;
 
     @Column
     @Nullable
-    private double endWorkingHour;
+    private String wednesday;
+
+    @Column
+    @Nullable
+    private String thursday;
+
+    @Column
+    @Nullable
+    private String friday;
 
 }
