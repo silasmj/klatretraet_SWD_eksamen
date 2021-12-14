@@ -23,7 +23,7 @@ public class WorkScheduleController {
 
     @PostMapping("/workSchedule")
     public WorkSchedule createWorkSchedule(@RequestBody WorkSchedule newWorkSchedule){
-        //newWorkSchedule.setId(null);
+        newWorkSchedule.setId(null);
         return workSchedule.save(newWorkSchedule);
     }
 
