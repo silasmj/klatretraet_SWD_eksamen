@@ -24,8 +24,8 @@
 
 <h1 id="date_range"></h1>
 <div>
-    <input type="button" onClick="backward()" name="backward" value="<">
-    <input type="button" onClick="forward()" name="forward" value=">">
+    <input type="button" onClick="backward()" name="backward" value="Forrige uge">
+    <input type="button" onClick="forward()" name="forward" value="Næste uge">
 </div>
 
 <h1>Vagtplan</h1>
@@ -36,34 +36,33 @@
 
     <table id="work-schedule-tbody">
         <thead>
-        <tr>
-            <td style="font-weight: bold">Navn</td>
-            <th>Mandag</th>
-            <th>Tirsdag</th>
-            <th>Onsdag</th>
-            <th>Torsdag</th>
-            <th>Fredag 1</th>
-            <th>Fredag 2</th>
-            <th>Fredag 3</th>
-            <th>Fredag 4</th>
-
-        </tr>
-        <tr>
-            <th style="color: red; font-weight: bold">Sovebørn</th>
-            <th>Ænder</th>
-            <th>Terner</th>
-            <th>Viber</th>
-            <th>Måger</th>
-            <th>Ænder</th>
-            <th>Ænder</th>
-            <th>Ænder</th>
-            <th>Ænder</th>
-
-        </tr>
+            <tr>
+                <td style="font-weight: bold">Navn</td>
+                <th>Mandag</th>
+                <th>Tirsdag</th>
+                <th>Onsdag</th>
+                <th>Torsdag</th>
+                <th>Fredag</th>
+            </tr>
         </thead>
+        <tbody id="workschedule-tbody">
+
+        </tbody>
+        <thead>
+            <tr>
+                <th style="color: red; font-weight: bold">Sovebørn</th>
+                <th>Ænder</th>
+                <th>Terner</th>
+                <th>Viber</th>
+                <th>Måger</th>
+                <th>Ænder</th>
+            </tr>
+        </thead>
+
     </table>
 </div>
 
+<script src="workScheduleEdit.js"></script>
 <script src="dateHandling.js"></script>
 
 </body>
