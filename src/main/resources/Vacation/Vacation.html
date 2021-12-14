@@ -24,35 +24,11 @@
 </nav>
 
 <h2 style="margin: auto; text-align: center" >Beregn feriedage</h2>
-<form>
-    <div>
-        <label>Optjent ferie i timer</label>
-        <input id="earnedVacation" type="number">
-    </div>
-    <div>
-        <label>Brugt ferie i timer</label>
-        <input id="usedVacation" type="number">
-    </div>
-    <div>
-        <label>Ferie i timer</label>
-        <input id="currentVacation" type="number">
-    </div>
-    <div>
-        <label>Dato for ferie</label>
-        <input id="date" type="date">
-    </div>
-    <div>
-        <label>Medarbejder navn</label>
-        <input id="employeeName">
-    </div>
-    <div>
-        <button onclick="vacation()">Udregn ny feriesaldo</button>
-    </div>
-</form>
 
-<button class = "new-employee-button" id="expand-employee-form">Ny Medarbejder➕</button>
-
+<button class = "new-vacation-button" id="expand-vacation-form">Opret ferieplan➕</button>
+<div id="create-vacation-form"></div>
 
 <script src="Vacation.js"></script>
+<script src="createVacation.js"></script>
 </body>
 </html>
