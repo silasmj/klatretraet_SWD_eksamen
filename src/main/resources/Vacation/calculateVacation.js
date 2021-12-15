@@ -9,5 +9,5 @@ function additionVacation(){
 
     let currentVacation = document.getElementById("currentVacation").value;
     let earnedVacation = document.getElementById("earnedVacation").value;
-    document.getElementById("result").innerHTML = earnedVacation += currentVacation;
+    document.getElementById("result").innerHTML = Number(earnedVacation) +Number(currentVacation);
 }
