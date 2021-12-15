@@ -26,7 +26,7 @@ function constructVacationsTableRow(vacationsTableRow, vacations){
                 <p class="row-vacation-currentVacation">${(vacations.currentVacation)}</p>
             </td>
             <td>
-                <em class="row-vacation-date">${(vacations.date)}</em>
+                <em class="row-vacation-week">${(vacations.week)}</em>
             </td>
             <td>
                 <p class="row-vacation-employeeName">${(vacations.employeeName)}</p>
@@ -37,6 +37,8 @@ function constructVacationsTableRow(vacationsTableRow, vacations){
             </td>
     
     `;
+    document.getElementById(`vacation-update-button-${vacations.id}`)
+        .addEventListener("click", () => updateVacation(vacations));
 }
 function deleteVacation(vacationsId) {
     fetch(baseURL + "/vacations/" + vacationsId, {

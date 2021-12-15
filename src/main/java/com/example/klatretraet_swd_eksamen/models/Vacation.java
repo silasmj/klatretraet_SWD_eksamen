@@ -26,7 +26,7 @@ public class Vacation {
     private double currentVacation;
 
     @Column
-    private Date date;
+    private String week;
 
     @Column
     private String employeeName;

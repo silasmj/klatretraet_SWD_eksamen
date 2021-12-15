@@ -17,7 +17,7 @@ const createVacationForm = `
     </div>
     <div>
         <label>Dato for ferie</label>
-        <input id="date" type="date">
+        <input id="week">
     </div>
     <div>
         <label>Medarbejder navn</label>
@@ -43,14 +43,14 @@ function createVacation() {
     const earnedVacation = document.getElementById("earnedVacation").value;
     const usedVacation = document.getElementById("usedVacation").value;
     const currentVacation = document.getElementById("currentVacation").value;
-    const date = document.getElementById("date").value;
+    const week = document.getElementById("week").value;
     const employeeName = document.getElementById("employeeName").value;
 
     const newVacation = {
         earnedVacation: earnedVacation,
         usedVacation: usedVacation,
         currentVacation: currentVacation,
-        date: date,
+        week: week,
         employeeName: employeeName
     };
 

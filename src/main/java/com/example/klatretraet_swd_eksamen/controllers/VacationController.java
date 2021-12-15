@@ -37,7 +37,7 @@ public class VacationController {
             if (vacationToUpdate.getEarnedVacation() != 0) foundVacation.setEarnedVacation(vacationToUpdate.getEarnedVacation());
             if (vacationToUpdate.getUsedVacation() != 0) foundVacation.setUsedVacation(vacationToUpdate.getUsedVacation());
             if (vacationToUpdate.getCurrentVacation() != 0) foundVacation.setCurrentVacation(vacationToUpdate.getCurrentVacation());
-            if (vacationToUpdate.getDate() != null) foundVacation.setDate(vacationToUpdate.getDate());
+            if (vacationToUpdate.getWeek() != null) foundVacation.setWeek(vacationToUpdate.getWeek());
             if (vacationToUpdate.getEmployeeName() != null) foundVacation.setEmployeeName(vacationToUpdate.getEmployeeName());
 
             vacations.save(foundVacation);
