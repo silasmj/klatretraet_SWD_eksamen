@@ -41,8 +41,18 @@
         </tr>
     </thead>
 </table>
+<form>
+    Nuværende ferie : <input type="text" id="currentVacation" /><br>
+    Brugt ferie: <input type="text" id="usedVacation" /><br>
+    Optjent ferie <input type="text" id="earnedVacation"/><br>
+    <input type="button" onClick="deductVacation()" Value="Deduct"/>
+    <input type="button" onClick="additionVacation()" Value="Addition"/>
+</form>
+<span id="result"></span>
+
 <script src="Vacation.js"></script>
 <script src="createVacation.js"></script>
 <script src="editVacation.js"></script>
+<script src="calculateVacation.js"></script>
 </body>
 </html>
