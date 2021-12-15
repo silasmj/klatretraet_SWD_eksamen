@@ -19,18 +19,20 @@ function getWeekNumber(offset) {
 function forward() {
     offset = offset + 1;
     getWeekNumber(offset);
+    fetchSchedule(offset);
 }
 
 function backward() {
     offset = offset - 1;
     getWeekNumber(offset);
+    fetchSchedule(offset);
 }
-
 
 window.onload = function() {
     getWeekNumber();
     fetchSchedule()
 }
+
 function fetchWeek(offset) {
     offset = offset || 0;
     var dt = new Date();
@@ -49,11 +51,11 @@ function fetchWeek(offset) {
     }
 }
 
-function fetchSchedule() {
+function fetchSchedule(offset) {
     fetch(baseURL + "/workSchedule")
         .then(response => response.json())
         .then(result => {
-            var weekYear = fetchWeek();
+            var weekYear = fetchWeek(offset);
             console.log(weekYear.number + " " + weekYear.year)
             console.log(result)
             const filtered = result.filter(schedule => schedule.year === weekYear.year && schedule.weekNumber === weekYear.number)
