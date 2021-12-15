@@ -1,4 +1,4 @@
-
+/*
 const workScheduleFormDiv = document.getElementById("create-work-schedule-form");
 const workScheduleFormExpandButton = document.getElementById("show-work-schedule-form");
 
@@ -72,4 +72,4 @@ function createWorkSchedule(){
 }
 
 document.getElementById("show-work-schedule-form")
-.addEventListener("click", showWorkScheduleForm);
+.addEventListener("click", showWorkScheduleForm); */

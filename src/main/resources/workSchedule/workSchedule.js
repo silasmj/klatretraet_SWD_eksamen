@@ -1,12 +1,7 @@
 const workscheduleTableBody = document.getElementById("workschedule-tbody");
 
-fetch(baseURL + "/workSchedule")
-    .then(response => response.json())
-    .then(result => {
-        result.map(createWorkscheduleTableRow)
-    })
-
 function createWorkscheduleTableRow(workschedule) {
+    console.log(workschedule)
     const workscheduleTableRow = document.createElement("tr");
     workscheduleTableRow.id = workschedule.id;
 
@@ -21,22 +16,22 @@ function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {
             <p>${workschedule.employeeName}</p>
         </td>
         <td class="row-workschedule-monday-workhours">
-            <p>${workschedule.startWorkingHour} - ${workschedule.endWorkingHour}</p>
+            <p>${workschedule.monday}</p>
         </td>
         <td class="row-workschedule-tuesday-workhours">
-        
+            <p>${workschedule.tuesday}</p>
         </td>
          <td class="row-workschedule-wednesday-workhours">
-        
+            <p>${workschedule.wednesday}</p>
         </td>
          <td class="row-workschedule-thursday-workhours">
-        
+            <p>${workschedule.thursday}</p>
         </td>
          <td class="row-workschedule-friday-workhours">
-        
+            <p>${workschedule.friday}</p>
         </td>
          <td class="row-workschedule-delete">
-        
+            <button>❌</button>
         </td>
     `;
 }
