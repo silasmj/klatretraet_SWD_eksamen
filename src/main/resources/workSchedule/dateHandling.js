@@ -17,12 +17,14 @@ function getWeekNumber(offset) {
     range.innerHTML = `Uge: ` + result + `, År: ` + dt.getFullYear();
 }
 function forward() {
+    hideElements();
     offset = offset + 1;
     getWeekNumber(offset);
     fetchSchedule(offset);
 }
 
 function backward() {
+    hideElements();
     offset = offset - 1;
     getWeekNumber(offset);
     fetchSchedule(offset);
@@ -30,7 +32,14 @@ function backward() {
 
 window.onload = function() {
     getWeekNumber();
-    fetchSchedule()
+    fetchSchedule();
+}
+function hideElements() {
+    var Parent = document.getElementById("workschedule-tbody");
+    while(Parent.hasChildNodes())
+    {
+        Parent.removeChild(Parent.firstChild);
+    }
 }
 
 function fetchWeek(offset) {
