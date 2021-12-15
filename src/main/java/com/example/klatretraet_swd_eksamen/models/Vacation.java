@@ -26,6 +26,9 @@ public class Vacation {
     private double currentVacation;
 
     @Column
+    private double hoursPerWeek;
+
+    @Column
     private String week;
 
     @Column
