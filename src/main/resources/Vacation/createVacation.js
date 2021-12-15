@@ -16,7 +16,11 @@ const createVacationForm = `
         <input id="currentVacation" type="number" placeholder="Timer">
     </div>
     <div>
-        <label>Dato for ferie</label>
+        <label>Timer per arbejdsuge</label>
+        <input id="hoursPerWeek" type="number" placeholder="Timer">
+    </div>
+    <div>
+        <label>Uge</label>
         <input id="week">
     </div>
     <div>
@@ -43,6 +47,7 @@ function createVacation() {
     const earnedVacation = document.getElementById("earnedVacation").value;
     const usedVacation = document.getElementById("usedVacation").value;
     const currentVacation = document.getElementById("currentVacation").value;
+    const hoursPerWeek = document.getElementById("hoursPerWeek").value;
     const week = document.getElementById("week").value;
     const employeeName = document.getElementById("employeeName").value;
 
@@ -50,6 +55,7 @@ function createVacation() {
         earnedVacation: earnedVacation,
         usedVacation: usedVacation,
         currentVacation: currentVacation,
+        hoursPerWeek: hoursPerWeek,
         week: week,
         employeeName: employeeName
     };
