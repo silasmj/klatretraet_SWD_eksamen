@@ -1,3 +1,4 @@
+
 const vacationTableBody = document.getElementById("vacation-tbody");
 
 fetch(baseURL + "/vacations")
@@ -26,6 +27,9 @@ function constructVacationsTableRow(vacationsTableRow, vacations){
                 <p class="row-vacation-currentVacation">${(vacations.currentVacation)}</p>
             </td>
             <td>
+                <p class="row-vacation-hoursPerWeek">${(vacations.hoursPerWeek)}</p>
+            </td>
+            <td>
                 <em class="row-vacation-week">${(vacations.week)}</em>
             </td>
             <td>
@@ -51,6 +55,7 @@ function deleteVacation(vacationsId) {
         }
     });
 }
+
 
 
 

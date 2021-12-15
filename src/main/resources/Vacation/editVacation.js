@@ -3,13 +3,16 @@ function updateVacation(vacation){
     tableRowToUpdate.innerHTML = `
       
         <td>
-            <input type="number" id="update-vacation-earned-vacation-${vacation.id}" value="${(vacation.earnedVacation)}">
+            <input type="number" id="update-vacation-earned-vacation-${vacation.id}" value="${(vacation.earnedVacation)}" onfocus="calcular()"/>
         </td>
        <td>
-            <input type="number" id="update-vacation-used-vacation-${vacation.id}" value="${(vacation.usedVacation)}">
+            <input type="number" id="update-vacation-used-vacation-${vacation.id}" value="${(vacation.usedVacation)}" onfocus="calcular()"/>
        </td>
         <td>
             <input type="number" id="update-vacation-current-vacation-${vacation.id}" value="${(vacation.currentVacation)}">  
+        </td>
+        <td>
+            <input id="update-vacation-hours-per-week-${vacation.id}" value="${(vacation.hoursPerWeek)}">  
         </td>
         <td>
             <input id="update-vacation-week-${vacation.id}" value="${(vacation.week)}">  
@@ -21,7 +24,7 @@ function updateVacation(vacation){
             <button id="cancel-update-${vacation.id}">✖️</button>
             <button onclick="updateVacationBackEnd(${vacation.id})">✅</button>
        </td>
-      
+
        `;
     document.getElementById(`cancel-update-${vacation.id}`)
         .addEventListener("click", () => undoUpdateTableRow(vacation));
@@ -40,6 +43,7 @@ function updateVacationBackEnd(vacationId){
         earnedVacation: document.getElementById(`update-vacation-earned-vacation-${vacationId}`).value,
         usedVacation: document.getElementById(`update-vacation-used-vacation-${vacationId}`).value,
         currentVacation: document.getElementById(`update-vacation-current-vacation-${vacationId}`).value,
+        hoursPerWeek: document.getElementById(`update-vacation-hours-per-week-${vacationId}`).value,
         week: document.getElementById(`update-vacation-week-${vacationId}`).value,
         employeeName: document.getElementById(`update-vacation-employee-name-${vacationId}`).value
 
@@ -56,3 +60,9 @@ function updateVacationBackEnd(vacationId){
         }
     });
 }
+function calcular(){
+    var valor1 = parseInt(document.getElementById('update-vacation-used-vacation-').value);
+    var valor2 = parseInt(document.getElementById('update-vacation-earned-vacation-').value);
+    document.getElementById('update-vacation-current-vacation-').value = valor1 + valor2;
+}
+
