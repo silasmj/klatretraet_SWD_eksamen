@@ -12,7 +12,7 @@ function updateVacation(vacation){
             <input type="number" id="update-vacation-current-vacation-${vacation.id}" value="${(vacation.currentVacation)}">  
         </td>
         <td>
-            <input type="date" id="update-vacation-week-${vacation.id}" value="${(vacation.week)}">  
+            <input id="update-vacation-week-${vacation.id}" value="${(vacation.week)}">  
         </td>
         <td>
             <input id="update-vacation-employee-name-${vacation.id}" value="${(vacation.employeeName)}">  

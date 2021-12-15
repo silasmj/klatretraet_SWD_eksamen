@@ -33,7 +33,7 @@ function constructVacationsTableRow(vacationsTableRow, vacations){
             </td>
             <td>
                 <button id="vacation-update-button-${vacations.id}">📝</button>
-                <button onclick="deleteVacation(${vacations.id})">❌</button>           
+                <button onclick="deleteVacation(${vacations.id})">❌</button>  
             </td>
     
     `;
