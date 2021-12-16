@@ -35,7 +35,7 @@ function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {
     `;
 }
 
-function createNewWorkSchedule(){
+function createNewWorkSchedule(offset){
     var weekYear = fetchWeek(offset);
 
     const newWorkScheduleRow = {
@@ -81,24 +81,7 @@ function addInput(elm) {
     input.setAttribute('onBlur', 'closeInput(this)');
     elm.appendChild(input);
     input.focus();
-}) );*/
-
-/*
-var table = document.getElementById("workschedule-tbody");
-var rows = table.getElementsByTagName("tr");
-for (i = 0; i < rows.length; i++) {
-    var currentRow = table.rows[i];
-    var createClickHandler = function(row) {
-        return function() {
-            var cell = row.getElementsByTagName("td")[0];
-            var id = cell.innerHTML;
-            alert("id:" + id);
-        };
-    };
-    currentRow.dblclick = createClickHandler(currentRow);
-}
-
-*/
+};
 
 function deleteWorkSchedule(workScheduleId) {
     fetch(baseURL + "/workSchedule/" + workScheduleId, {

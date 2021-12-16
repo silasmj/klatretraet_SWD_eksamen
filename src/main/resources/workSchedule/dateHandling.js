@@ -68,6 +68,15 @@ function fetchWeek(offset) {
         tdt.setMonth(0, 1 + ((4 - tdt.getDay()) + 7) % 7);
     }
     var result = 1 + Math.ceil((firstThursday - tdt) / 604800000) + offset;
+    if (result > 52){
+        var yearOffset = yearOffsetCalculator(result)
+        dt.setFullYear(dt.getFullYear() +  yearOffset)
+
+        result = result % 52;
+        if(result === 0){
+            result = 52;
+        }
+    }
     return {
         number: result,
         year: dt.getFullYear()
