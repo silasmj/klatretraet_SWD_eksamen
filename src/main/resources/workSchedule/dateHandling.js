@@ -31,11 +31,13 @@ function yearOffsetCalculator(offset) {
 }
 
 function forward() {
+    hideElements();
     offset = offset + 1;
     getWeekNumber(offset);
 }
 
 function backward() {
+    hideElements();
     offset = offset - 1;
     getWeekNumber(offset);
 }
@@ -43,7 +45,14 @@ function backward() {
 
 window.onload = function() {
     getWeekNumber();
-    fetchSchedule()
+    fetchSchedule();
+}
+function hideElements() {
+    var Parent = document.getElementById("workschedule-tbody");
+    while(Parent.hasChildNodes())
+    {
+        Parent.removeChild(Parent.firstChild);
+    }
 }
 
 
