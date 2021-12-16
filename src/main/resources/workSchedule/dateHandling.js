@@ -90,10 +90,7 @@ function fetchSchedule() {
         .then(response => response.json())
         .then(result => {
             var weekYear = fetchWeek(offset);
-            console.log(weekYear.number + " " + weekYear.year)
-            console.log(result)
             const filtered = result.filter(schedule => schedule.year === weekYear.year && schedule.weekNumber === weekYear.number)
-            console.log(filtered)
             filtered.map(createWorkscheduleTableRow)
         })
 }

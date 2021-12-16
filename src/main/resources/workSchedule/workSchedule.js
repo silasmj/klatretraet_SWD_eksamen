@@ -12,22 +12,22 @@ function createWorkscheduleTableRow(workschedule) {
 function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {
     workscheduleTableRow.innerHTML = `
         <td class="row-workschedule-name">
-            <p ondblclick="addInput(this)">${workschedule.employeeName}</p>
+            <p id="employee-name-${workschedule.id}" ondblclick="addInput(this)">${workschedule.employeeName}</p>
         </td>
         <td class="row-workschedule-monday-workhours">
-            <p ondblclick="addInput(this)">${workschedule.monday}</p>
+            <p id="monday-${workschedule.id}" ondblclick="addInput(this)">${workschedule.monday}</p>
         </td>
         <td class="row-workschedule-tuesday-workhours">
-            <p ondblclick="addInput(this)">${workschedule.tuesday}</p>
+            <p id="tuesday-${workschedule.id}" ondblclick="addInput(this)">${workschedule.tuesday}</p>
         </td>
          <td class="row-workschedule-wednesday-workhours">
-            <p ondblclick="addInput(this)">${workschedule.wednesday}</p>
+            <p id="wednesday-${workschedule.id}" ondblclick="addInput(this)">${workschedule.wednesday}</p>
         </td>
          <td class="row-workschedule-thursday-workhours">
-            <p ondblclick="addInput(this)">${workschedule.thursday}</p>
+            <p id="thursday-${workschedule.id}" ondblclick="addInput(this)">${workschedule.thursday}</p>
         </td>
          <td class="row-workschedule-friday-workhours">
-            <p ondblclick="addInput(this)">${workschedule.friday}</p>
+            <p id="friday-${workschedule.id}" ondblclick="addInput(this)">${workschedule.friday}</p>
         </td>
          <td class="row-workschedule-delete">
             <button onclick="deleteWorkSchedule(${workschedule.id})">❌</button>
@@ -63,28 +63,46 @@ function createNewWorkSchedule(offset){
     });
 }
 
-function closeInput(elm, workScheduleId) {
+function closeInput(elm) {
     var td = elm.parentNode;
     var value = elm.value;
+
+
+    var pdoc = td.parentNode;
+    var parentNode = pdoc.parentNode
+    console.log(parentNode.id)
+
     td.removeChild(elm);
     td.innerHTML = value;
 
-    const saveToDB = {
-        employeeName: document.getElementById()
+    console.log(value)
+    console.log(elm)
+
+    const workScheduleToUpdate = {
+        id: parentNode.id,
+        employeeName: document.getElementById(`employee-name-${parentNode.id}`).value,
+        monday: document.getElementById(`monday-${parentNode.id}`).value,
+        tuesday: document.getElementById(`tuesday-${parentNode.id}`).value,
+        wednesday: document.getElementById(`wednesday-${parentNode.id}`).value,
+        thursday: document.getElementById(`thursday-${parentNode.id}`).value,
+        friday: document.getElementById(`friday-${parentNode.id}`).value
 
 
     }
 
-    fetch(baseURL + "/workSchedule/" + workScheduleId, {
+    fetch(baseURL + "/workSchedule/" + parentNode.id, {
         method: "PATCH",
         headers: { "Content-type": "application/json; charset=UTF-8"},
-        body:JSON.stringify(elm)
+        body: JSON.stringify(workScheduleToUpdate)
     }).then(response => {
-        console.log(response)
+        console.log(workScheduleToUpdate)
+        hideElements()
+        fetchSchedule()
+
     });
 }
 
-function addInput(elm, workScheduleId) {
+function addInput(elm) {
     if (elm.getElementsByTagName('input').length > 0) return;
     var value = elm.innerHTML;
     elm.innerHTML = '';
@@ -95,7 +113,7 @@ function addInput(elm, workScheduleId) {
     input.setAttribute('onBlur', 'closeInput(this)');
     elm.appendChild(input);
     input.focus();
-    closeInput(elm, workScheduleId);
+    //closeInput(elm);
 };
 
 function updateWorkSchedule(workSchedule){
