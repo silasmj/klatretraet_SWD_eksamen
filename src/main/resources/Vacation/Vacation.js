@@ -40,15 +40,15 @@ function constructVacationsTableRow(vacationsTableRow, vacations){
 }
 
 function showEdit() {
-    document.getElementById("earned-vacation").style.display = "block";
-    document.getElementById("used-vacation").style.display = "block";
+    document.getElementById("earned-vacation").style.display = "table-cell";
+    document.getElementById("used-vacation").style.display = "table-cell";
 }
 
 function hideEdit() {
     document.getElementById("earned-vacation").style.display = "none";
-
     document.getElementById("used-vacation").style.display = "none";
 }
+
 function deleteVacation(vacationsId) {
     fetch(baseURL + "/vacations/" + vacationsId, {
         method: "DELETE"
