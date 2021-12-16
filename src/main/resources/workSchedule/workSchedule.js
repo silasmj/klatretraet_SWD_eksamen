@@ -30,7 +30,7 @@ function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {
             <p>${workschedule.friday}</p>
         </td>
          <td class="row-workschedule-delete">
-            <button>❌</button>
+            <button onclick="deleteWorkSchedule(${workschedule.id})">❌</button>
         </td>
     `;
 }
@@ -120,3 +120,15 @@ for (i = 0; i < rows.length; i++) {
 }
 
 */
+
+function deleteWorkSchedule(workScheduleId) {
+    fetch(baseURL + "/workSchedule/" + workScheduleId, {
+        method: "DELETE"
+    }).then(response => {
+        if (response.status === 200) {
+            document.getElementById(workScheduleId).remove();
+        } else {
+            console.log(response.status);
+        }
+    });
+}
