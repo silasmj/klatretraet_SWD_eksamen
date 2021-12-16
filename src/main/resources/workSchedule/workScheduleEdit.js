@@ -1,4 +1,4 @@
-    document.querySelectorAll("table tr:nth-child(2) td").forEach(function(node){
+  /*  document.querySelectorAll("table tr:nth-child(2) td").forEach(function(node){
         node.ondblclick=function(){
             var val=this.innerHTML;
             var input=document.createElement("input");
@@ -17,3 +17,4 @@
 function updateFieldInBackend() {
 
 }
+*/
