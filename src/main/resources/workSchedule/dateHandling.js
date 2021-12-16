@@ -34,12 +34,14 @@ function forward() {
     hideElements();
     offset = offset + 1;
     getWeekNumber(offset);
+    fetchSchedule(offset)
 }
 
 function backward() {
     hideElements();
     offset = offset - 1;
     getWeekNumber(offset);
+    fetchSchedule(offset)
 }
 
 
@@ -87,7 +89,7 @@ function fetchSchedule() {
     fetch(baseURL + "/workSchedule")
         .then(response => response.json())
         .then(result => {
-            var weekYear = fetchWeek();
+            var weekYear = fetchWeek(offset);
             console.log(weekYear.number + " " + weekYear.year)
             console.log(result)
             const filtered = result.filter(schedule => schedule.year === weekYear.year && schedule.weekNumber === weekYear.number)
