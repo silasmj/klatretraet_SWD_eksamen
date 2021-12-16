@@ -13,6 +13,7 @@ function getWeekNumber(offset) {
     if (tdt.getDay() !== 4) {
         tdt.setMonth(0, 1 + ((4 - tdt.getDay()) + 7) % 7);
     }
+
     var result = 1 + Math.ceil((firstThursday - tdt) / 604800000) + offset;
     if (result > 52){
         var yearOffset = yearOffsetCalculator(result)
@@ -20,10 +21,11 @@ function getWeekNumber(offset) {
 
         result = result % 52;
         if(result === 0){
-           result = 52;
+            result = 52;
         }
     }
     range.innerHTML = `Uge: ` + result + `, År: ` + dt.getFullYear();
+
 }
 
 function yearOffsetCalculator(offset) {
@@ -34,17 +36,18 @@ function forward() {
     hideElements();
     offset = offset + 1;
     getWeekNumber(offset);
+    fetchSchedule(offset);
 }
 
 function backward() {
     hideElements();
     offset = offset - 1;
     getWeekNumber(offset);
+    fetchSchedule(offset);
 }
 
-
 window.onload = function() {
-    getWeekNumber();
+    getWeekNumber(offset);
     fetchSchedule();
 }
 function hideElements() {
@@ -54,7 +57,6 @@ function hideElements() {
         Parent.removeChild(Parent.firstChild);
     }
 }
-
 
 function fetchWeek(offset) {
     offset = offset || 0;
@@ -83,11 +85,11 @@ function fetchWeek(offset) {
     }
 }
 
-function fetchSchedule() {
+function fetchSchedule(offset) {
     fetch(baseURL + "/workSchedule")
         .then(response => response.json())
         .then(result => {
-            var weekYear = fetchWeek();
+            var weekYear = fetchWeek(offset);
             console.log(weekYear.number + " " + weekYear.year)
             console.log(result)
             const filtered = result.filter(schedule => schedule.year === weekYear.year && schedule.weekNumber === weekYear.number)
