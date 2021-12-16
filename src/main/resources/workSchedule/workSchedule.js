@@ -7,6 +7,7 @@ function createWorkscheduleTableRow(workschedule) {
     workscheduleTableBody.appendChild(workscheduleTableRow);
 
     constructWorkscheduleTableRow(workscheduleTableRow, workschedule);
+
 }
 
 function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {
@@ -35,8 +36,9 @@ function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {
     `;
 }
 
-function createNewWorkSchedule(offset){
+function createNewWorkSchedule(){
     var weekYear = fetchWeek(offset);
+    console.log(weekYear);
 
     const newWorkScheduleRow = {
         year: weekYear.year,
