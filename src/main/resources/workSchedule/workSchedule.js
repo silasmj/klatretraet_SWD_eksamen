@@ -7,6 +7,7 @@ function createWorkscheduleTableRow(workschedule) {
     workscheduleTableBody.appendChild(workscheduleTableRow);
 
     constructWorkscheduleTableRow(workscheduleTableRow, workschedule);
+
 }
 
 function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {

@@ -57,7 +57,6 @@ function hideElements() {
     }
 }
 
-
 function fetchWeek(offset) {
     offset = offset || 0;
     var dt = new Date();
