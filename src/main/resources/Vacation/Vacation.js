@@ -18,12 +18,6 @@ function createVacationCard(vacations){
 function constructVacationsTableRow(vacationsTableRow, vacations){
     vacationsTableRow.innerHTML = `
             <td>
-                <p class="row-vacation-earnedVacation">${(vacations.earnedVacation)}</p>
-            </td>
-            <td>
-                <p class="row-vacation-usedVacation">${(vacations.usedVacation)}</p>
-            </td>
-            <td>
                 <p class="row-vacation-currentVacation">${(vacations.currentVacation)}</p>
             </td>
             <td>
@@ -36,7 +30,7 @@ function constructVacationsTableRow(vacationsTableRow, vacations){
                 <p class="row-vacation-employeeName">${(vacations.employeeName)}</p>
             </td>
             <td>
-                <button id="vacation-update-button-${vacations.id}">📝</button>
+                <button id="vacation-update-button-${vacations.id}" onclick="showEdit()">📝</button>
                 <button onclick="deleteVacation(${vacations.id})">❌</button>  
             </td>
     
@@ -44,6 +38,17 @@ function constructVacationsTableRow(vacationsTableRow, vacations){
     document.getElementById(`vacation-update-button-${vacations.id}`)
         .addEventListener("click", () => updateVacation(vacations));
 }
+
+function showEdit() {
+    document.getElementById("earned-vacation").style.display = "table-cell";
+    document.getElementById("used-vacation").style.display = "table-cell";
+}
+
+function hideEdit() {
+    document.getElementById("earned-vacation").style.display = "none";
+    document.getElementById("used-vacation").style.display = "none";
+}
+
 function deleteVacation(vacationsId) {
     fetch(baseURL + "/vacations/" + vacationsId, {
         method: "DELETE"
@@ -55,6 +60,8 @@ function deleteVacation(vacationsId) {
         }
     });
 }
+
+window.onload = hideEdit();
 
 
 
