@@ -6,7 +6,7 @@ function updateVacation(vacation){
             <input type="number" id="update-vacation-earned-vacation-${vacation.id}" value="0"/>
         </td>
        <td>
-            <input type="number" id="update-vacation-used-vacation-${vacation.id}" value="0">
+            <input type="number" id="update-vacation-used-vacation-${vacation.id}" value="0"/>
        </td>
         <td>
             <input type="number" id="update-vacation-current-vacation-${vacation.id}" value="${(vacation.currentVacation)}">  
@@ -66,6 +66,7 @@ function updateVacationBackEnd(vacationId){
         }
     });
 }
+/*
 function calcular(){
     var valor1 = parseInt(document.getElementById('update-vacation-used-vacation-').value);
     var valor2 = parseInt(document.getElementById('update-vacation-earned-vacation-').value);
@@ -77,4 +78,4 @@ function deductBy(){
     let currentVacation = document.getElementById('row-vacation-currentVacation');
     document.getElementById('update-vacation-currentVacation').value = usedVacation - currentVacation;
 }
-
+*/

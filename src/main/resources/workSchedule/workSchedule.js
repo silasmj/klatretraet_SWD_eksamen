@@ -64,14 +64,28 @@ function createNewWorkSchedule(){
     });
 }
 
-function closeInput(elm) {
+function closeInput(elm, workScheduleId) {
     var td = elm.parentNode;
     var value = elm.value;
     td.removeChild(elm);
     td.innerHTML = value;
+
+    const saveToDB = {
+        employeeName: document.getElementById()
+
+
+    }
+
+    fetch(baseURL + "/workSchedule/" + workScheduleId, {
+        method: "PATCH",
+        headers: { "Content-type": "application/json; charset=UTF-8"},
+        body:JSON.stringify(elm)
+    }).then(response => {
+        console.log(response)
+    });
 }
 
-function addInput(elm) {
+function addInput(elm, workScheduleId) {
     if (elm.getElementsByTagName('input').length > 0) return;
     var value = elm.innerHTML;
     elm.innerHTML = '';
@@ -82,7 +96,16 @@ function addInput(elm) {
     input.setAttribute('onBlur', 'closeInput(this)');
     elm.appendChild(input);
     input.focus();
+    closeInput(elm, workScheduleId);
 };
+
+function updateWorkSchedule(workSchedule){
+    const tableRowToUpdate = document.getElementById(workSchedule.id)
+    tableRowToUpdate.innerHTML = `
+    
+    `;
+
+}
 
 function deleteWorkSchedule(workScheduleId) {
     fetch(baseURL + "/workSchedule/" + workScheduleId, {
@@ -95,3 +118,4 @@ function deleteWorkSchedule(workScheduleId) {
         }
     });
 }
+

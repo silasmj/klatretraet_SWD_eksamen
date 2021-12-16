@@ -13,7 +13,6 @@ function getWeekNumber(offset) {
     if (tdt.getDay() !== 4) {
         tdt.setMonth(0, 1 + ((4 - tdt.getDay()) + 7) % 7);
     }
-
     var result = 1 + Math.ceil((firstThursday - tdt) / 604800000) + offset;
     if (result > 52){
         var yearOffset = yearOffsetCalculator(result)
@@ -25,7 +24,6 @@ function getWeekNumber(offset) {
         }
     }
     range.innerHTML = `Uge: ` + result + `, År: ` + dt.getFullYear();
-
 }
 
 function yearOffsetCalculator(offset) {
@@ -46,6 +44,7 @@ function backward() {
     fetchSchedule(offset);
 }
 
+
 window.onload = function() {
     getWeekNumber(offset);
     fetchSchedule();
@@ -57,6 +56,7 @@ function hideElements() {
         Parent.removeChild(Parent.firstChild);
     }
 }
+
 
 function fetchWeek(offset) {
     offset = offset || 0;
