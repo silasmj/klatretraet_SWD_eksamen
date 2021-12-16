@@ -12,22 +12,22 @@ function createWorkscheduleTableRow(workschedule) {
 function constructWorkscheduleTableRow(workscheduleTableRow, workschedule) {
     workscheduleTableRow.innerHTML = `
         <td class="row-workschedule-name">
-            <p >${workschedule.employeeName}</p>
+            <p ondblclick="addInput(this)">${workschedule.employeeName}</p>
         </td>
         <td class="row-workschedule-monday-workhours">
-            <p>${workschedule.monday}</p>
+            <p ondblclick="addInput(this)">${workschedule.monday}</p>
         </td>
         <td class="row-workschedule-tuesday-workhours">
-            <p>${workschedule.tuesday}</p>
+            <p ondblclick="addInput(this)">${workschedule.tuesday}</p>
         </td>
          <td class="row-workschedule-wednesday-workhours">
-            <p>${workschedule.wednesday}</p>
+            <p ondblclick="addInput(this)">${workschedule.wednesday}</p>
         </td>
          <td class="row-workschedule-thursday-workhours">
-            <p>${workschedule.thursday}</p>
+            <p ondblclick="addInput(this)">${workschedule.thursday}</p>
         </td>
          <td class="row-workschedule-friday-workhours">
-            <p>${workschedule.friday}</p>
+            <p ondblclick="addInput(this)">${workschedule.friday}</p>
         </td>
          <td class="row-workschedule-delete">
             <button>❌</button>
@@ -62,61 +62,23 @@ function createNewWorkSchedule(){
         }
     });
 }
-    /*document.querySelectorAll("#work-schedule-tbody tbody").forEach(function(node){
-        node.ondblclick=function(){
-            var val=this.innerHTML;
-            console.log(val)
-            var input=document.createElement("input");
-            input.value=val;
-            input.onblur=function(){
-                var val=this.value;
-                this.parentNode.innerHTML=val;
-            }
-            this.innerHTML="";
-            this.appendChild(input);
-            input.focus();
-        }
-    }); */
-document.querySelector('#work-schedule-tbody tbody').addEventListener("dblclick", function () {
-    var td = event.target;
-    while (td != this && !td.matches("td")) {
-        td = td.parentNode;
-    }
-    if (td === this) {
-        console.log("No table cell found");
-    } else {
-        console.log(td.innerHTML);
-    }
-});
 
-/*
-document.querySelectorAll("#workschedule-tbody td").forEach(e => e.addEventListener("ondblclick", function () {
-    var val=this.value;
-    console.log(val)
-    var input=document.createElement("input");
-    input.value=val;
-    input.onblur=function(){
-        var val=this.value;
-        this.parentNode.innerHTML=val;
-    }
-    this.innerHTML="";
-    this.appendChild(input);
-    input.focus();
-}) );*/
-
-/*
-var table = document.getElementById("workschedule-tbody");
-var rows = table.getElementsByTagName("tr");
-for (i = 0; i < rows.length; i++) {
-    var currentRow = table.rows[i];
-    var createClickHandler = function(row) {
-        return function() {
-            var cell = row.getElementsByTagName("td")[0];
-            var id = cell.innerHTML;
-            alert("id:" + id);
-        };
-    };
-    currentRow.dblclick = createClickHandler(currentRow);
+function closeInput(elm) {
+    var td = elm.parentNode;
+    var value = elm.value;
+    td.removeChild(elm);
+    td.innerHTML = value;
 }
 
-*/
+function addInput(elm) {
+    if (elm.getElementsByTagName('input').length > 0) return;
+    var value = elm.innerHTML;
+    elm.innerHTML = '';
+
+    var input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('value', value);
+    input.setAttribute('onBlur', 'closeInput(this)');
+    elm.appendChild(input);
+    input.focus();
+}
