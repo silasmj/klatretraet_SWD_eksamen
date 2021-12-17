@@ -71,7 +71,6 @@ function closeInput(elm) {
     var td = elm.parentNode;
     var value = elm.value;
 
-
     var pdoc = td.parentNode;
     var parentNode = pdoc.parentNode
     console.log(parentNode.id)
@@ -101,7 +100,8 @@ function closeInput(elm) {
         if (response.status === 200){
             console.log(workScheduleToUpdate)
             hideElements()
-            fetchSchedule()
+            fetchWeek(offset);
+            fetchSchedule(offset);
         }
     });
 }

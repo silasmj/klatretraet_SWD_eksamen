@@ -20,8 +20,8 @@ public class Employee {
     @Column
     private String image;
 
-    @ManyToOne
-    @JoinColumn(name = "area_name")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "area_name",updatable = true)
     @Nullable
     private Area area;
 
