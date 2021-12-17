@@ -1,7 +1,0 @@
-.new-vacation-button {
-    transition-duration: 0.4s;
-}
-.new-vacation-button:hover{
-    background-color: green; /* Green */
-    color: white;
-}

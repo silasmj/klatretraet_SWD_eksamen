@@ -9,7 +9,8 @@ const createEmployeeForm = `<div>
     <input id="create-employee-image" placeholder="Billede"> 
     <label>Stue</label>
     <input id="create-employee-area" placeholder="Stue">    
-    <button onclick="createEmployee()">Create a New Employee</button>
+    <button class="button-3" onclick="createEmployee()">Opret ny medarbejder</button>
+    <button class="button-3" onclick="removeEmployeesForm()">Annuler</button>
 </div>`;
 
 

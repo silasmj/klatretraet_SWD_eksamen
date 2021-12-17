@@ -28,8 +28,8 @@ const createVacationForm = `
         <input id="employeeName" placeholder="Fulde navn">
     </div>
     <div>
-        <button onclick="createVacation()">Udregn ny feriesaldo</button>
-        <button onclick="removeVacationsForm();">Annuler</button>
+        <button class="button-3" onclick="createVacation()">Udregn ny feriesaldo</button>
+        <button class="button-3" onclick="removeVacationsForm();">Annuler</button>
     </div>`;
 
 
