@@ -56,9 +56,11 @@ function createNewWorkSchedule(){
         body: JSON.stringify(newWorkScheduleRow)
     }).then(response => {
         if (response.status === 200) {
-            location.reload();
-            console.log(response)
-            fetchSchedule();
+            console.log(offset);
+            hideElements();
+            fetchWeek(offset);
+            fetchSchedule(offset);
+
         } else {
             console.log("Vagtplan ikke oprettet", response.status);
         }
