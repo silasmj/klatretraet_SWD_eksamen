@@ -18,5 +18,4 @@ function createEmployeeCard(employees) {
     employeeDiv.appendChild(cardElement);
 
 }
-employeeDiv.innerHTML = <script></script>
 
