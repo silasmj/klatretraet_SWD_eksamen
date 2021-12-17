@@ -78,18 +78,17 @@ function closeInput(elm) {
     td.innerHTML = value;
 
     console.log(value)
-    console.log(elm)
+    var s = document.getElementById(`employee-name-${parentNode.id}`)
+    console.log(s.innerText)
 
     const workScheduleToUpdate = {
         id: parentNode.id,
-        employeeName: document.getElementById(`employee-name-${parentNode.id}`).value,
-        monday: document.getElementById(`monday-${parentNode.id}`).value,
-        tuesday: document.getElementById(`tuesday-${parentNode.id}`).value,
-        wednesday: document.getElementById(`wednesday-${parentNode.id}`).value,
-        thursday: document.getElementById(`thursday-${parentNode.id}`).value,
-        friday: document.getElementById(`friday-${parentNode.id}`).value
-
-
+        employeeName: document.getElementById(`employee-name-${parentNode.id}`).innerText,
+        monday: document.getElementById(`monday-${parentNode.id}`).innerText,
+        tuesday: document.getElementById(`tuesday-${parentNode.id}`).innerText,
+        wednesday: document.getElementById(`wednesday-${parentNode.id}`).innerText,
+        thursday: document.getElementById(`thursday-${parentNode.id}`).innerText,
+        friday: document.getElementById(`friday-${parentNode.id}`).innerText
     }
 
     fetch(baseURL + "/workSchedule/" + parentNode.id, {
@@ -97,10 +96,11 @@ function closeInput(elm) {
         headers: { "Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(workScheduleToUpdate)
     }).then(response => {
-        console.log(workScheduleToUpdate)
-        hideElements()
-        fetchSchedule()
-
+        if (response.status === 200){
+            console.log(workScheduleToUpdate)
+            hideElements()
+            fetchSchedule()
+        }
     });
 }
 
