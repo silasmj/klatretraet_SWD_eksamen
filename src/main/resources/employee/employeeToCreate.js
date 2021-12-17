@@ -2,16 +2,23 @@ const employeesFormDiv = document.getElementById("create-employee-form");
 const employeesFormExpandButton = document.getElementById("expand-employee-form");
 
 
-const createEmployeeForm = `<div>
-    <label>Navn</label>
-    <input id="create-employee-name" placeholder="Navn">
-    <label>Billede</label>
-    <input id="create-employee-image" placeholder="Billede"> 
-    <label>Stue</label>
-    <input id="create-employee-area" placeholder="Stue">    
-    <button class="button-3" onclick="createEmployee()">Opret ny medarbejder</button>
-    <button class="button-3" onclick="removeEmployeesForm()">Annuler</button>
-</div>`;
+const createEmployeeForm = `
+    <div>
+        <label>Navn</label>
+        <input id="create-employee-name" placeholder="Navn">
+    </div>
+    <div>
+        <label>Billede</label>
+        <input id="create-employee-image" placeholder="Billede"> 
+    </div>
+    <div>
+        <label>Stue</label>
+        <input id="create-employee-area" placeholder="Stue">    
+    </div>
+    <div>
+        <button class="button-3" onclick="createEmployee()">Opret ny medarbejder</button>
+        <button class="button-3" onclick="removeEmployeesForm()">Annuler</button>
+    </div>`;
 
 
 
