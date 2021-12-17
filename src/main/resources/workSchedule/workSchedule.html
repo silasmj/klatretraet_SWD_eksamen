@@ -24,13 +24,14 @@
 </nav>
 
 <h1 id="date_range"></h1>
-<div>
+<div class="container">
     <input class="button-3" type="button" onClick="backward()" name="backward" value="Forrige uge">
     <input class="button-3" type="button" onClick="forward()" name="forward" value="Næste uge">
 </div>
 
-<h1>Vagtplan</h1>
-<button class="button-3" onclick="createNewWorkSchedule()">Ny række ➕</button>
+<div class="container">
+    <button class="button-3" onclick="createNewWorkSchedule()">Ny række ➕</button>
+</div>
 
 <div id="create-work-schedule-form"></div>
 <div class="work-schedule-div" id="">
@@ -53,7 +54,7 @@
         </tbody>
         <thead>
             <tr>
-                <th style="color: red; font-weight: bold">Sovebørn</th>
+                <th style="color: white; font-weight: bold">Sovebørn</th>
                 <th>Ænder</th>
                 <th>Terner</th>
                 <th>Viber</th>
