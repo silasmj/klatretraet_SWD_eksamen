@@ -193,3 +193,7 @@ table, th, td{
     align-items: center;
     height: 100px;
 }
+
+#headers{
+    margin:0px;
+}
