@@ -39,7 +39,7 @@ function createEmployee() {
     const areaName = document.getElementById("create-employee-area").value;
 
     const newArea = {
-           name: areaName
+        name: areaName
     };
 
     const newEmployee = {
