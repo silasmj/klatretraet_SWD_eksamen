@@ -6,7 +6,7 @@ const createEmployeeForm = `
     <div>
         <label>Navn</label>
         <input id="create-employee-name" placeholder="Navn">
-    </div>
+    </div>  
     <div>
         <label>Billede</label>
         <input id="create-employee-image" placeholder="Billede"> 
