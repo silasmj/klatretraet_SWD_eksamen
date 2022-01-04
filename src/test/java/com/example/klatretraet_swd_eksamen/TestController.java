@@ -21,6 +21,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -43,9 +44,9 @@ public class TestController {
         Employee emp2 = new Employee(2L, "Guobin", "gub.png");
         Employee emp3 = new Employee(3L, "Daniel", "daniel.png");
 
-        List<Employee> employees = Arrays.asList(emp1, emp2, emp3);
+        List<Employee> allEmployees = Arrays.asList(emp1, emp2, emp3);
 
-        given(eRepo.findAll()).willReturn(employees);
+        given(eRepo.findAll()).willReturn(allEmployees);
 
         mvc.perform(get("/employees")
                 .contentType(MediaType.APPLICATION_JSON))
